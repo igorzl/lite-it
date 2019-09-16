@@ -3,11 +3,14 @@
     <div class="top-navigation">
       <button id="rectangle-btn">Rectangle</button>
       <button id="text-btn">Textbox</button>
+      <button id="delete-btn">Delete selected</button>
+      <button id="save-btn">Save canvas</button>
+      <button id="svg-btn">Save as image</button>
     </div>
     <div class="canvas-container">
       <canvas id="canvas" width="1000px" height="600px"></canvas>
     </div>
-    <div class="bottom-navigation"></div>
+    <div class="bottom-navigation" id="bottom-navigation"></div>
   </div>
 </div>
-<%= javascript_include_tag 'canvas' %> <%= javascript_pack_tag 'canvas' %>
+<%= javascript_pack_tag 'canvas' %>
