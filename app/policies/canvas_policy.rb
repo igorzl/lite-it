@@ -6,7 +6,8 @@ class CanvasPolicy < ApplicationPolicy
   end
 
   def show?
-    record.user == user
+    # record.user == user
+    true
   end
 
   def create?
