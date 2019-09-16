@@ -1,6 +1,6 @@
-class CreateCanvas < ActiveRecord::Migration[5.2]
+class CreateCanvases < ActiveRecord::Migration[5.2]
   def change
-    create_table :canvas do |t|
+    create_table :canvases do |t|
       t.string :name
       t.string :tools_json
       t.string :description
