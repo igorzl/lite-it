@@ -55,3 +55,15 @@
   margin:0;
 }
 
+.btn-navbar {
+  @extend .btn-ghost;
+  font-weight: bold;
+  width: 180px;
+  text-align: center;
+  height: 50px;
+}
+
+.btn-navbar:last-of-type {
+  margin:0;
+}
+
