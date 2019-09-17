@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div class="col-2 offset-5">
+      <h1>Edit my Project</h1>
+
+      <%= render 'form', project: @project %>
+
+      <hr>
+      <%= link_to "Back to my Project", project_path(@project) %>
+    </div>
+  </div>
+</div>
