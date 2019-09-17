@@ -1,9 +1,12 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :find_project, only: [:show, :edit, :update, :destroy]
+  before_action :find_project, only: [:show]
+
+  def index
+    @projects = policy_scope(Project)
+  end
 
   def show
-      authorize @project
+    authorize @project
   end
 
 private

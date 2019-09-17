@@ -24,5 +24,4 @@ class ProjectPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
-
 end

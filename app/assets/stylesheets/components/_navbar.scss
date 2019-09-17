@@ -10,3 +10,25 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-container {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  // padding: 10px;
+}
+
+.navbar-container img {
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+}
+
+.navbar-right-side {
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}

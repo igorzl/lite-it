@@ -1,0 +1,57 @@
+// body {
+//   background-color: black;
+// }
+
+.dashboard-container {
+  display: block;
+  background-color: white;
+  color: black;
+  margin: 32px;
+  padding: 16px 150px;
+  min-height: 90vh;
+}
+
+.project-card {
+  display: flex;
+  background-color: white;
+  align-items: center;
+  margin: 0px;
+  justify-content: space-between;
+}
+
+.project-card img {
+  max-width: 350px;
+  max-height: 350px;
+}
+
+.project-card .project-title {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 32px;
+  margin: 0px;
+  padding: 32px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  height: 150px;
+}
+
+.project-card .project-title-rt {
+  border: 1px solid black;
+  border-right: 0px !important;
+}
+
+.project-card .project-title-left {
+  justify-content: flex-end;
+  border: 1px solid black;
+  border-left: 0px !important;
+}
+.project-card-left {
+  flex-direction: row-reverse;
+}
+
+.card-link {
+  color: black;
+  text-decoration: none;
+}
