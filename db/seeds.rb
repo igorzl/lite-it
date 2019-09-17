@@ -23,10 +23,101 @@ puts "Adding some users..."
   fname = Faker::Name.unique.first_name
   lname = Faker::Name.unique.last_name
 
-  User.create!(email: email, fname: first_name, lname: last_name, password: '123456')
+  User.create!(email: email, fname: fname, lname: lname, password: '123456')
 end
 
 prj = Project.new(name: "Inspired", description: "Inspired by sea in the morning", user: user)
 prj.save
+
 cnv = Canvas.new(name: "First canvas", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568725058/orhrn6kqnkgiqcqaiesf.jpg"
+cnv.remote_photo_url = url
 cnv.save
+
+cnv = Canvas.new(name: "Try 2", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568722181/xvneine8cvqjyawhr2tr.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+cnv = Canvas.new(name: "Try 3", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568725058/orhrn6kqnkgiqcqaiesf.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+cnv = Canvas.new(name: "Try 4", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568722181/xvneine8cvqjyawhr2tr.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+prj = Project.new(name: "Rejected", description: "My black and white portraits of actors in studios across the US", user: user)
+prj.save
+
+
+cnv = Canvas.new(name: "First canvas", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568725058/orhrn6kqnkgiqcqaiesf.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+cnv = Canvas.new(name: "Try 2", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568722181/xvneine8cvqjyawhr2tr.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+cnv = Canvas.new(name: "Try 3", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568725058/orhrn6kqnkgiqcqaiesf.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+cnv = Canvas.new(name: "Try 4", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568722181/xvneine8cvqjyawhr2tr.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+prj = Project.new(name: "Forget It", description: "Would still love to do some more before the end of the year", user: user)
+prj.save
+
+
+cnv = Canvas.new(name: "First canvas", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568725058/orhrn6kqnkgiqcqaiesf.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+cnv = Canvas.new(name: "Try 2", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568722181/xvneine8cvqjyawhr2tr.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+cnv = Canvas.new(name: "Try 3", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568725058/orhrn6kqnkgiqcqaiesf.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+cnv = Canvas.new(name: "Try 4", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568722181/xvneine8cvqjyawhr2tr.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+prj = Project.new(name: "Love It", description: "Meeting Aimee Phillips regarding this on November 15th", user: user)
+prj.save
+
+
+cnv = Canvas.new(name: "First canvas", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568725058/orhrn6kqnkgiqcqaiesf.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+cnv = Canvas.new(name: "Try 2", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568722181/xvneine8cvqjyawhr2tr.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+cnv = Canvas.new(name: "Try 3", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568725058/orhrn6kqnkgiqcqaiesf.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
+cnv = Canvas.new(name: "Try 4", description: "There is no photo", project: prj)
+url = "https://res.cloudinary.com/dfqbormfp/image/upload/v1568722181/xvneine8cvqjyawhr2tr.jpg"
+cnv.remote_photo_url = url
+cnv.save
+
