@@ -1,0 +1,40 @@
+body {
+  background-color: black;
+}
+
+#main-screen {
+  background-color: white;
+}
+
+.prj-btns-canvas-descr {
+  background-color: white;
+  padding: 30px;
+  margin: 50px;
+  height: 720px;
+}
+
+.prj-btns-canvas {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.prj-canvas {
+  // display: flex;
+  // flex-direction: row;
+  padding-right: 50px;
+}
+
+.prj-btns {
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.prj-descr {
+  display:flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+

@@ -1,0 +1,27 @@
+<!-- <div class="d-flex flex-column align-items-start ml-4 mb-auto mt-5">  -->
+<div class="black">
+
+
+  <div class="prj-btns-canvas-descr">
+    <div class="prj-btns-canvas">
+
+      <div class='prj-btns'>
+
+        <%= link_to "Edit project", "#", class: "btn-prj"  %>
+        <%= link_to "Add canvas", "#", class: "btn-prj" %>
+        <%= link_to "Add main project image", "#", class: "btn-prj" %>
+
+      </div>
+      <div class="prj-canvas">
+        <%= image_tag "hickey_footprints.jpg" %>
+      </div>
+
+    </div>
+      <div class="prj-descr">
+        <h2><%= @project.name %></h2>
+        <p><%= @project.description %></p>
+      </div>
+
+  </div>
+
+</div>
