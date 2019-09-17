@@ -11,7 +11,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "projects/index";
+
+body {
+  background-color: black;
+}
 
 .label-blue {
   color: #076CE7;
 }
+
