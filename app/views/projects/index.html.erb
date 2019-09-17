@@ -1,0 +1,39 @@
+<div class="dashboard-container">
+  <% if @projects.nil? %>
+    <p>display div: Waiting for your first project</p>
+  <% else %>
+    <% @projects.each_with_index do |project, index| %>
+      <%= link_to  project_path(project), class: "card-link" do  %>
+      <% if index.even? %>
+        <div class="project-card">
+          <div class="project-title project-title-rt">
+
+            <%= project.name %>
+          </div>
+            <div class="img">
+              <%= image_tag "blue.jpg", alt: "alttext" %>
+          <% if project.photo %>
+              <%= cl_image_tag project.photo %>
+          <% end %>
+            </div>
+
+        </div>
+      <% else %>
+        <div class="project-card project-card-left">
+          <div class="project-title project-title-left">
+            <%= project.name %>
+          </div>
+
+            <div class="img">
+              <%= image_tag "red.jpg", alt: "alttext" %>
+          <% if project.photo %>
+              <%= cl_image_tag project.photo %>
+          <% end %>
+            </div>
+
+        </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
