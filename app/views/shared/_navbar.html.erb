@@ -33,7 +33,11 @@
     <% else %>
         <%= link_to "LITE-IT", "#", class: "btn-navbar logo" %>
         <%= link_to "Hide me", "#", class: "btn-navbar", style: "color:white" %>
-        <%= link_to "About", "#", class: "btn-navbar" %>
+        <% if params[:action] == "about" %>
+          <%= link_to "About", root_path, class: "btn-navbar" %>
+        <% else %>
+          <%= link_to "About", about_path, class: "btn-navbar" %>
+        <% end %>
         <%= link_to "Log in", new_user_session_path, class: "btn-navbar" %>
         <%= link_to "Sign up", new_user_registration_path, class: "btn-navbar" %>
     <% end %>
