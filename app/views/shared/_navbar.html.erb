@@ -1,11 +1,16 @@
 <div class="navbar-container">
-  <%= image_tag "logo.png" %>
   <div class="navbar-right-side">
     <% if user_signed_in? %>
-        <%= link_to "Dashboard", "#", class: "btn-navbar" %>
+        <%= link_to "LITE-IT", "#", class: "btn-navbar logo" %>
+        <%= link_to "Welcome, NAME", "#", class: "btn-navbar" %>
+        <%= link_to "About", "#", class: "btn-navbar" %>
+        <%= link_to "Log in", new_user_session_path, class: "btn-navbar" %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-navbar" %>
     <% else %>
-        <%= link_to "Login", new_user_session_path, class: "btn-navbar" %>
+        <%= link_to "LITE-IT", "#", class: "btn-navbar logo" %>
+        <%= link_to "Hide me", "#", class: "btn-navbar" %>
+        <%= link_to "About", "#", class: "btn-navbar" %>
+        <%= link_to "Log in", new_user_session_path, class: "btn-navbar" %>
         <%= link_to "Sign up", new_user_registration_path, class: "btn-navbar" %>
     <% end %>
   </div>

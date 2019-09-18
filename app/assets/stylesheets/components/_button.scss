@@ -1,10 +1,10 @@
 .btn-ghost {
-  color: #4A4A4A;
-  border: 1px solid #4A4A4A;
-  padding: 8px 24px;
+  color: black;
+  border: 0.4px solid #4A4A4A;
+  padding: 23px 24px;
   border-radius: 0px;
-  font-weight: lighter;
-  opacity: 0.6;
+  // font-weight: lighter;
+  opacity: 0.8;
   transition: opacity 0.3s ease;
 }
 
@@ -57,13 +57,18 @@
 
 .btn-navbar {
   @extend .btn-ghost;
-  font-weight: bold;
-  width: 180px;
+  // font-weight: bold;
+  width: 20%;
   text-align: center;
-  height: 50px;
+  // height: 50px;
 }
 
 .btn-navbar:last-of-type {
   margin:0;
 }
+.logo {
+  font-weight: bold;
+}
+
+
 
