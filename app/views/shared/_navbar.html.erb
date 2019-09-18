@@ -1,11 +1,40 @@
-<div class="navbar-container">
-  <%= image_tag "logo.png" %>
-  <div class="navbar-right-side">
+<!-- <div class="navbar-container">
+  <div class="navbar-left-side">
+    <div class="navbar-title">
+      LITE-IT
+    </div>
     <% if user_signed_in? %>
-        <%= link_to "Dashboard", "#", class: "btn-navbar" %>
+      <div class="navbar-welcome">
+        Welcome, <%= current_user.fname %>
+      </div>
+    <% end  %>
+  </div>
+  <div class="navbar-right-side">
+    <%= link_to "About", "#", class: "btn-navbar" %>
+    <% if user_signed_in? %>
+        <%= link_to "Browse", "#", class: "btn-navbar" %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-navbar" %>
     <% else %>
         <%= link_to "Login", new_user_session_path, class: "btn-navbar" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn-navbar" %>
+    <% end %>
+  </div>
+</div>
+ -->
+
+ <div class="navbar-container">
+  <div class="navbar-right-side">
+    <% if user_signed_in? %>
+        <%= link_to "LITE-IT", "#", class: "btn-navbar-logged-in logo" %>
+        <%= link_to "Welcome, #{current_user.fname}", "#", class: "btn-navbar-logged-in" %>
+        <%= link_to "Create", new_project_path, class: "btn-navbar-logged-in" %>
+        <%= link_to "Browse", projects_path, class: "btn-navbar-logged-in" %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-navbar-logged-in" %>
+    <% else %>
+        <%= link_to "LITE-IT", "#", class: "btn-navbar logo" %>
+        <%= link_to "Hide me", "#", class: "btn-navbar", style: "color:white" %>
+        <%= link_to "About", "#", class: "btn-navbar" %>
+        <%= link_to "Log in", new_user_session_path, class: "btn-navbar" %>
         <%= link_to "Sign up", new_user_registration_path, class: "btn-navbar" %>
     <% end %>
   </div>
