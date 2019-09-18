@@ -4,6 +4,7 @@
       <button id="rectangle-btn">Rectangle</button>
       <button id="text-btn">Textbox</button>
       <button id="delete-btn">Delete selected</button>
+      <button id="drawing-mode-btn">Start drawing</button>
 
       <%= form_for :canvas, url: project_canvases_url, method: :patch, html: { id: "save-btn" } do |f|%>
         <%= f.hidden_field :description, id: 'canvas_json' %>
