@@ -5,8 +5,13 @@ class CanvasPolicy < ApplicationPolicy
     end
   end
 
+  def new?
+    true
+  end
+
   def show?
-    record.user == user
+    # Show (share) canvas through the link without edit functionality
+    true
   end
 
   def create?

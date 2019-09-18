@@ -1,4 +1,4 @@
-import "bootstrap";
+import 'bootstrap';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 
 previewImageOnFileSelect();
