@@ -1,6 +1,6 @@
 class CanvasesController < ApplicationController
   include Pundit
-  after_action :verify_authorized, except: [:new, :show, :edit, :create]
+  after_action :verify_authorized, except: [:new, :show, :edit, :create, :update]
   before_action :find_canvas, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -19,6 +19,9 @@ class CanvasesController < ApplicationController
   end
 
   def update
+    @canvas.description = params[:canvas][:description]
+    @canvas.photo = params[:canvas][:photo]
+    @canvas.save
   end
 
   def show
