@@ -11,20 +11,20 @@ puts "Cleaning canvases.."
 Canvas.delete_all
 puts "Cleaning projects.."
 Project.destroy_all
-# puts "Cleaning users.."
-# User.delete_all
+puts "Cleaning users.."
+User.delete_all
 
-# user = User.create(email: "igor@igor.com", password: "123456", fname: "John", lname: "Brown")
-# user.save
+user = User.create(email: "abc@abc.com", password: "123456", fname: "John", lname: "Brown")
+user.save
 
-# puts "Adding some users..."
-# 3.times do
-#   email = Faker::Internet.unique.email
-#   fname = Faker::Name.unique.first_name
-#   lname = Faker::Name.unique.last_name
+puts "Adding some users..."
+3.times do
+  email = Faker::Internet.unique.email
+  fname = Faker::Name.unique.first_name
+  lname = Faker::Name.unique.last_name
 
-#   User.create!(email: email, fname: fname, lname: lname, password: '123456')
-# end
+  User.create!(email: email, fname: fname, lname: lname, password: '123456')
+end
 
 # # prj = Project.new(name: "Inspired", description: "Inspired by sea in the morning", user: user)
 # # prj.save
