@@ -9,15 +9,10 @@
 @import 'font-awesome';
 
 // Your CSS partials
-<<<<<<< HEAD
 @import 'components/index';
 @import 'pages/index';
 @import 'projects/index';
-=======
-@import "components/index";
-@import "pages/index";
-@import "projects/index";
-@import "projects/form";
+@import 'projects/form';
 
 // this is here because black is the background-color throughout the project
 body {
@@ -29,5 +24,3 @@ input {
   border: 1px solid black !important;
   background-image: none !important;
 }
-
->>>>>>> master

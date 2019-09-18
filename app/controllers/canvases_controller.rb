@@ -1,4 +1,6 @@
 class CanvasesController < ApplicationController
+  include Pundit
+  after_action :verify_authorized, except: [:new, :show, :edit]
   before_action :find_canvas, only: [:show, :edit, :update, :destroy]
 
   def new
@@ -22,7 +24,7 @@ class CanvasesController < ApplicationController
 
   private
 
-  def find_geek
+  def find_canvas
     @geek = Canvas.find(params[:id])
   end
 

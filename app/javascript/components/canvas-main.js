@@ -50,7 +50,7 @@ addDeleteBtn.addEventListener('click', removeSelected);
 // Parsing svg to the canvas
 var group = [];
 fabric.loadSVGFromURL(
-  'assets/photo-camera.svg',
+  '../../../assets/photo-camera.svg',
   function(objects, options) {
     var loadedObjects = new fabric.Group(group);
     loadedObjects.set({
