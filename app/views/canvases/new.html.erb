@@ -4,11 +4,15 @@
       <button id="rectangle-btn">Rectangle</button>
       <button id="text-btn">Textbox</button>
       <button id="delete-btn">Delete selected</button>
-      <button id="save-btn">Save canvas</button>
-      <button id="svg-btn">Save as image</button>
+
+      <%= form_for :canvas, url: project_canvases_url, method: :post, html: { id: "save-btn" } do |f|%>
+        <%= f.hidden_field :description, id: 'canvas_json' %>
+        <%= f.hidden_field :photo, id: 'canvas_svg' %>
+        <%= f.submit 'Save canvas' %>
+      <% end %>
     </div>
     <div class="canvas-container">
-      <canvas id="canvas" width="1000px" height="600px"></canvas>
+      <canvas id="canvas" width="1000px" height="600px" data-canvas="<% @canvas %>"></canvas>
     </div>
     <div class="bottom-navigation" id="bottom-navigation"></div>
   </div>
