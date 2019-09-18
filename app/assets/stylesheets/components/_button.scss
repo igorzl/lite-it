@@ -163,6 +163,21 @@
   // height: 50px;
 }
 
+.btn-helper {
+  // @extend .btn-ghost;
+  // font-weight: bold;
+  border: 0.4px solid #4A4A4A;
+  padding: 23px 24px;
+  border-radius: 0px;
+  width: 20%;
+  text-align: center;
+  // height: 50px;
+  background-color: white;
+  height: 750px;
+  padding-top: 550px;
+  text-align: justify;
+}
+
 .btn-navbar-logged-in {
   @extend .btn-ghost;
   // font-weight: bold;
