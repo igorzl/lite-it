@@ -1,9 +1,11 @@
 <!-- <div class="d-flex flex-column align-items-start ml-4 mb-auto mt-5">  -->
 <div class="black">
 
+<div class="d-flex">
 
   <div class="prj-btns-canvas-descr">
-    <div class="prj-btns-canvas">
+
+<!--     <div class="prj-btns-canvas">
 
       <div class='prj-btns'>
 
@@ -17,11 +19,59 @@
       </div>
 
     </div>
-      <div class="prj-descr">
-        <h2><%= @project.name %></h2>
-        <p><%= @project.description %></p>
-      </div>
+ -->
+
+     <div class="container justify-content-md-center">
+
+        <div class="row">
+
+          <div class="col-12 col-md-4 m-0">
+            <div class="prj-descr">
+              <h2><%= @project.name %></h2>
+              <p><%= @project.description %></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row">
+
+           <div class="col-12 col-md-4 m-0">
+              <div class="card-canvas">
+                <%= image_tag "plus.png", alt: "Add new canvas", width: 328, height: 182 %>
+              </div>
+          </div>
+
+          <% @project.canvas.each_with_index do |canvas, index| %>
+
+          <div class="col-md-4">
+
+            <!-- link_to canvas_path(canvas), class: "card-link" do  -->
+            <%= link_to "#" do %>
+
+             <div class="card-canvas">
+
+              <% if canvas.photo.url %>
+                <%= cl_image_tag canvas.photo, width: 330, height: 182, crop: :fill %>
+              <% else %>
+                <%= image_tag 'https://www.anitian.com/wp-content/uploads/2016/11/silicon-valley-gilfoyle.jpg', class: "thumb-index"%>
+              <% end %>
+
+             </div>
+
+            <% end %>
+
+
+          </div>
+
+        <% end %>
+
+       </div>
+
+     </div>
 
   </div>
+
+</div>
 
 </div>
