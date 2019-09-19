@@ -21,22 +21,21 @@
 }
 
 .right {
-  display:flex;
+  align-items: flex-end;
   width: 20%;
   float: right;
 }
 
 .login {
+  align-items: flex-end;
   margin-left: 60%;
   margin-right: 20%;
 }
 
 .end {
-  font-weight: lighter;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-end;
+  font-weight: lighter;
+  align-items: flex-end;
   padding-bottom: 96px;
 }
 
