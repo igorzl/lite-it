@@ -117,179 +117,115 @@ const addRectangle = () => {
 };
 
 const addWindow = () => {
-  var group = [];
-  fabric.loadSVGFromURL(
-    '/assets/sunlight.svg',
-    function(objects, options) {
-      var loadedObjects = new fabric.Group(group);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 1,
-        scaleY: 1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    },
-    function(item, object) {
-      object.set('id', item.getAttribute('id'));
-      group.push(object);
-    }
-  );
+  fabric.loadSVGFromURL('/assets/sunlight.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 1,
+      scaleY: 1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
 };
 
 const addBackground = () => {
-  var group = [];
-  fabric.loadSVGFromURL(
-    '/assets/background.svg',
-    function(objects, options) {
-      var loadedObjects = new fabric.Group(group);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    },
-    function(item, object) {
-      object.set('id', item.getAttribute('id'));
-      group.push(object);
-    }
-  );
+  fabric.loadSVGFromURL('/assets/background.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
 };
 
 const addCorner = () => {
-  var group = [];
-  fabric.loadSVGFromURL(
-    '/assets/corner.svg',
-    function(objects, options) {
-      var loadedObjects = new fabric.Group(group);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    },
-    function(item, object) {
-      object.set('id', item.getAttribute('id'));
-      group.push(object);
-    }
-  );
+  fabric.loadSVGFromURL('/assets/corner.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
 };
 
 const addFlash1 = () => {
-  var group = [];
-  fabric.loadSVGFromURL(
-    '/assets/flash-1.svg',
-    function(objects, options) {
-      var loadedObjects = new fabric.Group(group);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    },
-    function(item, object) {
-      object.set('id', item.getAttribute('id'));
-      group.push(object);
-    }
-  );
+  fabric.loadSVGFromURL('/assets/flash-1.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
 };
 
 const addFlash2 = () => {
-  var group = [];
-  fabric.loadSVGFromURL(
-    '/assets/flash-2.svg',
-    function(objects, options) {
-      var loadedObjects = new fabric.Group(group);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    },
-    function(item, object) {
-      object.set('id', item.getAttribute('id'));
-      group.push(object);
-    }
-  );
+  fabric.loadSVGFromURL('/assets/flash-2.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
 };
 
 const addFlash3 = () => {
-  var group = [];
-  fabric.loadSVGFromURL(
-    '/assets/flash-3.svg',
-    function(objects, options) {
-      var loadedObjects = new fabric.Group(group);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    },
-    function(item, object) {
-      object.set('id', item.getAttribute('id'));
-      group.push(object);
-    }
-  );
+  fabric.loadSVGFromURL('/assets/flash-3.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
 };
 
 const addRing = () => {
-  var group = [];
-  fabric.loadSVGFromURL(
-    '/assets/ring.svg',
-    function(objects, options) {
-      var loadedObjects = new fabric.Group(group);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    },
-    function(item, object) {
-      object.set('id', item.getAttribute('id'));
-      group.push(object);
-    }
-  );
+  fabric.loadSVGFromURL('/assets/ring.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
 };
 
 const addSoftbox = () => {
-  var group = [];
-  fabric.loadSVGFromURL(
-    '/assets/softbox.svg',
-    function(objects, options) {
-      var loadedObjects = new fabric.Group(group);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    },
-    function(item, object) {
-      object.set('id', item.getAttribute('id'));
-      group.push(object);
-    }
-  );
+  fabric.loadSVGFromURL('/assets/softbox.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
 };
 
 // Adding eventlistemners for objects
