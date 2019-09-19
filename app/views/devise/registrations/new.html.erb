@@ -1,33 +1,33 @@
 
-  <div class="row">
-    <div class="col-2 offset-10 crud-box">
 
 
-      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= f.error_notification %>
-
-      <div class="form-inputs form-labels ">
-        <%= f.input :email,
-        required: true,
-        autofocus: true,
-        input_html: { autocomplete: "email" }%>
-        <%= f.input :fname, label: 'First name', required: false, autofocus: true %>
-        <%= f.input :lname, label: 'Last name', required: false, autofocus: true %>
-        <%= f.input :password,
-        required: true,
-        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-        input_html: { autocomplete: "new-password" } %>
-        <%= f.input :password_confirmation,
-        required: true,
-        input_html: { autocomplete: "new-password" } %>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: "white-btn"%>
-      </div>
-      <% end %>
+<div class="right crud-box">
 
 
-    </div>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs form-labels ">
+    <%= f.input :email,
+    required: true,
+    autofocus: true,
+    input_html: { autocomplete: "email" }%>
+    <%= f.input :fname, label: 'First name', required: false, autofocus: true %>
+    <%= f.input :lname, label: 'Last name', required: false, autofocus: true %>
+    <%= f.input :password,
+    required: true,
+    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+    input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+    required: true,
+    input_html: { autocomplete: "new-password" } %>
   </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign up", class: "white-btn mb-4"%>
+  </div>
+  <% end %>
+
+
+</div>
 

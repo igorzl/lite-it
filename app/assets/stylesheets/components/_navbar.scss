@@ -101,3 +101,31 @@
   align-items: center;
   width: 100vw;
 }
+
+.helper-container {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: white;
+}
+
+.helper-right-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100vw;
+}
+
+.helper-area {
+  // font-weight: bold;
+  width: 20%;
+  text-align: center;
+  color: black;
+  // height: 50px;
+}
+.btn-navbar {
+  font-weight: 300;
+}
+

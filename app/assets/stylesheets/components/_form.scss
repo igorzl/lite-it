@@ -3,7 +3,6 @@
   background-color: white;
   color: black;
   padding: 16px;
-  font-family: Roboto;
   font-weight: 200;
   height: 600px;
   justify-content: center;
@@ -15,4 +14,30 @@
   flex-direction: column;
   justify-content: flex-end;
 }
+
+.center {
+  width: 19.5%;
+  margin: auto;
+}
+
+.right {
+  display:flex;
+  width: 20%;
+  float: right;
+}
+
+.login {
+  margin-left: 60%;
+  margin-right: 20%;
+}
+
+.end {
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 96px;
+}
+
 
