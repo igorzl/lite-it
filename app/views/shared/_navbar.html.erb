@@ -11,15 +11,15 @@
     <%= link_to "Browse", projects_path, class: "btn-navbar-logged-in" %>
     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-navbar-logged-in" %>
     <% else %>
-    <%= link_to "LITE-IT", "#", class: "btn-navbar logo" %>
-    <%= link_to "Hide me", "#", class: "btn-navbar", style: "color:white" %>
-    <% if params[:action] == "about" %>
-    <%= link_to "About", root_path, class: "btn-navbar" %>
-    <% else %>
-    <%= link_to "About", about_path, class: "btn-navbar" %>
-    <% end %>
-    <%= link_to "Log in", new_user_session_path, class: "btn-navbar" %>
-    <%= link_to "Sign up", new_user_registration_path, class: "btn-navbar" %>
+        <%= link_to "LITE-IT", "#", class: "btn__navbar logo" %>
+        <%= link_to "Hide me", "#", class: "btn__navbar", style: "color:white" %>
+        <% if params[:action] == "about" %>
+          <%= link_to "About", root_path, class: "btn__navbar" %>
+        <% else %>
+          <%= link_to "About", about_path, class: "btn__navbar" %>
+        <% end %>
+        <%= link_to "Log in", new_user_session_path, class: "btn__navbar" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn__navbar" %>
     <% end %>
   </div>
 </div>
