@@ -1,5 +1,14 @@
-.edit-delete-project {
+.edit-delete-project  {
+  padding-bottom: 16px;
+}
+
+a {
+ text-decoration: none;
+  color: #929292;
+  margin-bottom: 16px;
+}
+
+a:hover {
   text-decoration: none;
-  color: #555555;
-  margin-bottom: 24px;
+  color: #4b3949;
 }

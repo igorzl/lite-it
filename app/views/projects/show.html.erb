@@ -32,8 +32,8 @@
             </div>
 
             <div class=“edit-delete-project”>
-              <a href="#">Edit </a>
-              <a href="#">Delete </a>
+              <%= link_to "Edit", edit_project_path %>
+              <%= link_to "Delete", projects_path, method: :delete, remote: true %>
             </div>
 
           </div>

@@ -14,8 +14,8 @@ Project.destroy_all
 # puts "Cleaning users.."
 # User.delete_all
 
-# user = User.create(email: "igor@igor.com", password: "123456", fname: "John", lname: "Brown")
-# user.save
+user = User.create(email: "igor@igor.com", password: "123456", fname: "John", lname: "Brown")
+user.save
 
 # puts "Adding some users..."
 # 3.times do
