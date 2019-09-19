@@ -152,17 +152,19 @@
   padding-vertical: 12px;
   padding-left:12px;
   width: 180px;
+  margin: 0;
 }
 
 // .btn-prj:last-of-type {
 //   margin:0;
 // }
 
-.btn-navbar {
+.btn__navbar {
   @extend .btn-ghost;
   // font-weight: bold;
   width: 20%;
   text-align: center;
+  font-weight: lighter;
   // height: 50px;
   margin: 0;
 }
@@ -182,11 +184,13 @@
   text-align: justify;
 }
 
-.btn-navbar-logged-in {
+.btn-navbar__logged-in {
   @extend .btn-ghost;
   // font-weight: bold;
   width: 40%;
+  font-weight: lighter;
   text-align: center;
+  margin: 0;
   // height: 50px;
 }
 
