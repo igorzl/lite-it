@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="row">
-    <div class="top-navigation">
+  <div class="row pt-4">
+    <div class="top-navigation col-2">
       <button id="rectangle-btn">Red Rectangle</button>
       <button id="text-btn">Textbox</button>
       <button id="drawing-mode-btn">Drawing mode</button>
@@ -20,7 +20,7 @@
         <%= f.submit 'Save canvas' %>
       <% end %>
     </div>
-    <div class="canvas-container">
+    <div class="canvas-container col-10">
       <canvas id="canvas" width="1000px" height="600px" data-canvas="<% @canvas %>"></canvas>
     </div>
     <div class="bottom-navigation" id="bottom-navigation"></div>
