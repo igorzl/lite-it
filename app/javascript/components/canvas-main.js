@@ -100,8 +100,10 @@ addSaveBtn.addEventListener('submit', e => {
 
   canvas_json.value = saveCanvas();
   canvas_svg.value = rasterize();
-
   addSaveBtn.submit();
+  setTimeout(() => {
+    document.getElementById('save-submit').disabled = false;
+  }, 100);
 });
 
 const drawingMode = () => {

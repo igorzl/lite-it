@@ -6,24 +6,25 @@ class CanvasPolicy < ApplicationPolicy
   end
 
   def new?
-    record.user == user
+    true
   end
 
   def show?
-    # Show (share) canvas through the link without edit functionality
     true
   end
 
   def create?
-    record.user == user
+    true
   end
 
   def edit?
-    record.user == user
+    project = Project.find(record.project_id)
+    project.user == user
   end
 
   def update?
-    record.user == user
+    project = Project.find(record.project_id)
+    project.user == user
   end
 
   def destroy?

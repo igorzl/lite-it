@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :projects, only: [:index, :show, :create, :new, :edit, :update, :destroy] do
-    resources :canvases, only: [:create, :show, :new, :edit, :update]
+    resources :canvases
   end
 end
