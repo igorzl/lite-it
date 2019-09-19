@@ -16,7 +16,7 @@ let loadCanvas = () => {
     console.log('Load new');
     var group = [];
     fabric.loadSVGFromURL(
-      '/assets/photo-camera.svg',
+      'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898172/photo-camera_xesj7w.svg',
       function(objects, options) {
         var loadedObjects = new fabric.Group(group);
         loadedObjects.set({
@@ -117,115 +117,139 @@ const addRectangle = () => {
 };
 
 const addWindow = () => {
-  fabric.loadSVGFromURL('/assets/sunlight.svg', function(objects, options) {
-    var loadedObjects = fabric.util.groupSVGElements(objects, options);
-    loadedObjects.set({
-      left: 480,
-      top: 500,
-      scaleX: 1,
-      scaleY: 1
-    });
-    canvas.add(loadedObjects);
-    canvas.renderAll();
-  });
+  fabric.loadSVGFromURL(
+    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898175/sunlight_wt2ugn.svg',
+    function(objects, options) {
+      var loadedObjects = fabric.util.groupSVGElements(objects, options);
+      loadedObjects.set({
+        left: 480,
+        top: 500,
+        scaleX: 1,
+        scaleY: 1
+      });
+      canvas.add(loadedObjects);
+      canvas.renderAll();
+    }
+  );
 };
 
 const addBackground = () => {
-  fabric.loadSVGFromURL('/assets/background.svg', function(objects, options) {
-    var loadedObjects = fabric.util.groupSVGElements(objects, options);
-    loadedObjects.set({
-      left: 480,
-      top: 500,
-      scaleX: 0.1,
-      scaleY: 0.1
-    });
-    canvas.add(loadedObjects);
-    canvas.renderAll();
-  });
+  fabric.loadSVGFromURL(
+    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898167/background_wtu5nq.svg',
+    function(objects, options) {
+      var loadedObjects = fabric.util.groupSVGElements(objects, options);
+      loadedObjects.set({
+        left: 480,
+        top: 500,
+        scaleX: 0.1,
+        scaleY: 0.1
+      });
+      canvas.add(loadedObjects);
+      canvas.renderAll();
+    }
+  );
 };
 
 const addCorner = () => {
-  fabric.loadSVGFromURL('/assets/corner.svg', function(objects, options) {
-    var loadedObjects = fabric.util.groupSVGElements(objects, options);
-    loadedObjects.set({
-      left: 480,
-      top: 500,
-      scaleX: 0.1,
-      scaleY: 0.1
-    });
-    canvas.add(loadedObjects);
-    canvas.renderAll();
-  });
+  fabric.loadSVGFromURL(
+    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898167/corner_szqagi.svg',
+    function(objects, options) {
+      var loadedObjects = fabric.util.groupSVGElements(objects, options);
+      loadedObjects.set({
+        left: 480,
+        top: 500,
+        scaleX: 0.1,
+        scaleY: 0.1
+      });
+      canvas.add(loadedObjects);
+      canvas.renderAll();
+    }
+  );
 };
 
 const addFlash1 = () => {
-  fabric.loadSVGFromURL('/assets/flash-1.svg', function(objects, options) {
-    var loadedObjects = fabric.util.groupSVGElements(objects, options);
-    loadedObjects.set({
-      left: 480,
-      top: 500,
-      scaleX: 0.1,
-      scaleY: 0.1
-    });
-    canvas.add(loadedObjects);
-    canvas.renderAll();
-  });
+  fabric.loadSVGFromURL(
+    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898167/flash-1_lgz4ag.svg',
+    function(objects, options) {
+      var loadedObjects = fabric.util.groupSVGElements(objects, options);
+      loadedObjects.set({
+        left: 480,
+        top: 500,
+        scaleX: 0.1,
+        scaleY: 0.1
+      });
+      canvas.add(loadedObjects);
+      canvas.renderAll();
+    }
+  );
 };
 
 const addFlash2 = () => {
-  fabric.loadSVGFromURL('/assets/flash-2.svg', function(objects, options) {
-    var loadedObjects = fabric.util.groupSVGElements(objects, options);
-    loadedObjects.set({
-      left: 480,
-      top: 500,
-      scaleX: 0.1,
-      scaleY: 0.1
-    });
-    canvas.add(loadedObjects);
-    canvas.renderAll();
-  });
+  fabric.loadSVGFromURL(
+    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898167/flash-2_ijchde.svg',
+    function(objects, options) {
+      var loadedObjects = fabric.util.groupSVGElements(objects, options);
+      loadedObjects.set({
+        left: 480,
+        top: 500,
+        scaleX: 0.1,
+        scaleY: 0.1
+      });
+      canvas.add(loadedObjects);
+      canvas.renderAll();
+    }
+  );
 };
 
 const addFlash3 = () => {
-  fabric.loadSVGFromURL('/assets/flash-3.svg', function(objects, options) {
-    var loadedObjects = fabric.util.groupSVGElements(objects, options);
-    loadedObjects.set({
-      left: 480,
-      top: 500,
-      scaleX: 0.1,
-      scaleY: 0.1
-    });
-    canvas.add(loadedObjects);
-    canvas.renderAll();
-  });
+  fabric.loadSVGFromURL(
+    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898167/flash-3_ymrwmu.svg',
+    function(objects, options) {
+      var loadedObjects = fabric.util.groupSVGElements(objects, options);
+      loadedObjects.set({
+        left: 480,
+        top: 500,
+        scaleX: 0.1,
+        scaleY: 0.1
+      });
+      canvas.add(loadedObjects);
+      canvas.renderAll();
+    }
+  );
 };
 
 const addRing = () => {
-  fabric.loadSVGFromURL('/assets/ring.svg', function(objects, options) {
-    var loadedObjects = fabric.util.groupSVGElements(objects, options);
-    loadedObjects.set({
-      left: 480,
-      top: 500,
-      scaleX: 0.1,
-      scaleY: 0.1
-    });
-    canvas.add(loadedObjects);
-    canvas.renderAll();
-  });
+  fabric.loadSVGFromURL(
+    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898169/ring_hksgjn.svg',
+    function(objects, options) {
+      var loadedObjects = fabric.util.groupSVGElements(objects, options);
+      loadedObjects.set({
+        left: 480,
+        top: 500,
+        scaleX: 0.1,
+        scaleY: 0.1
+      });
+      canvas.add(loadedObjects);
+      canvas.renderAll();
+    }
+  );
 };
 
 const addSoftbox = () => {
-  fabric.loadSVGFromURL('/assets/softbox.svg', function(objects, options) {
-    var loadedObjects = fabric.util.groupSVGElements(objects, options);
-    loadedObjects.set({
-      left: 480,
-      top: 500,
-      scaleX: 0.1,
-      scaleY: 0.1
-    });
-    canvas.add(loadedObjects);
-    canvas.renderAll();
-  });
+  fabric.loadSVGFromURL(
+    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898175/softbox_zdmqzo.svg',
+    function(objects, options) {
+      var loadedObjects = fabric.util.groupSVGElements(objects, options);
+      loadedObjects.set({
+        left: 480,
+        top: 500,
+        scaleX: 0.1,
+        scaleY: 0.1
+      });
+      canvas.add(loadedObjects);
+      canvas.renderAll();
+    }
+  );
 };
 
 // Adding eventlistemners for objects
