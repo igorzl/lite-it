@@ -4,7 +4,7 @@ var canvas = new fabric.Canvas('canvas', {
   isDrawingMode: false
 });
 
-// Loading canvas New or from DB
+// Loading canvas New or canvas from DB
 let loadCanvas = () => {
   let canvasData = document.querySelector('#canvas').dataset;
   if (canvasData.canvasJson != null) {
@@ -36,22 +36,6 @@ let loadCanvas = () => {
   }
 };
 loadCanvas();
-
-// Adding objects
-function addRectangle() {
-  var rect = new fabric.Rect({
-    top: 100,
-    left: 100,
-    width: 60,
-    height: 70,
-    fill: 'red'
-  });
-
-  canvas.add(rect);
-}
-
-let addRectBtn = document.getElementById('rectangle-btn');
-addRectBtn.addEventListener('click', addRectangle);
 
 // Adding text
 
@@ -118,22 +102,149 @@ const drawingMode = () => {
 let addDrawingBtn = document.getElementById('drawing-mode-btn');
 addDrawingBtn.addEventListener('click', drawingMode);
 
-// var group = [];
-// fabric.loadSVGFromURL(
-//   '/assets/sunlight.svg',
-//   function(objects, options) {
-//     var loadedObjects = new fabric.Group(group);
-//     loadedObjects.set({
-//       left: 480,
-//       top: 500,
-//       scaleX: 1,
-//       scaleY: 1
-//     });
-//     canvas.add(loadedObjects);
-//     canvas.renderAll();
-//   },
-//   function(item, object) {
-//     object.set('id', item.getAttribute('id'));
-//     group.push(object);
-//   }
-// );
+// OBJECTS FOR CANVAS
+
+const addRectangle = () => {
+  var rect = new fabric.Rect({
+    top: 100,
+    left: 100,
+    width: 60,
+    height: 70,
+    fill: 'black'
+  });
+
+  canvas.add(rect);
+};
+
+const addWindow = () => {
+  fabric.loadSVGFromURL('/assets/sunlight.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 1,
+      scaleY: 1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
+};
+
+const addBackground = () => {
+  fabric.loadSVGFromURL('/assets/background.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
+};
+
+const addCorner = () => {
+  fabric.loadSVGFromURL('/assets/corner.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
+};
+
+const addFlash1 = () => {
+  fabric.loadSVGFromURL('/assets/flash-1.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
+};
+
+const addFlash2 = () => {
+  fabric.loadSVGFromURL('/assets/flash-2.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
+};
+
+const addFlash3 = () => {
+  fabric.loadSVGFromURL('/assets/flash-3.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
+};
+
+const addRing = () => {
+  fabric.loadSVGFromURL('/assets/ring.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
+};
+
+const addSoftbox = () => {
+  fabric.loadSVGFromURL('/assets/softbox.svg', function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: 480,
+      top: 500,
+      scaleX: 0.1,
+      scaleY: 0.1
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
+  });
+};
+
+// Adding eventlistemners for objects
+
+let addRectBtn = document.getElementById('rectangle-btn');
+addRectBtn.addEventListener('click', addRectangle);
+let addWindowBtn = document.getElementById('window-btn');
+addWindowBtn.addEventListener('click', addWindow);
+let addBackgroundBtn = document.getElementById('background-btn');
+addBackgroundBtn.addEventListener('click', addBackground);
+let addCornerBtn = document.getElementById('corner-btn');
+addCornerBtn.addEventListener('click', addCorner);
+let addFlash1Btn = document.getElementById('flash1-btn');
+addFlash1Btn.addEventListener('click', addFlash1);
+let addFlash2Btn = document.getElementById('flash2-btn');
+addFlash2Btn.addEventListener('click', addFlash2);
+let addFlash3Btn = document.getElementById('flash3-btn');
+addFlash3Btn.addEventListener('click', addFlash3);
+let addRingBtn = document.getElementById('ring-btn');
+addRingBtn.addEventListener('click', addRing);
+let addSoftboxBtn = document.getElementById('softbox-btn');
+addSoftboxBtn.addEventListener('click', addSoftbox);

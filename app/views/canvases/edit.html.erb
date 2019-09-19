@@ -1,18 +1,26 @@
 <div class="container">
-  <div class="row">
-    <div class="top-navigation">
-      <button id="rectangle-btn">Rectangle</button>
-      <button id="text-btn">Textbox</button>
+  <div class="row pt-4">
+    <div class="top-navigation col-2">
+      <button id="drawing-mode-btn">Draw</button>
       <button id="delete-btn">Delete selected</button>
-      <button id="drawing-mode-btn">Start drawing</button>
+      <button id="rectangle-btn">Rectangle</button>
+      <button id="text-btn">Text</button>
+      <button id="corner-btn">V Flat</button>
+      <button id="window-btn">Window</button>
+      <button id="flash1-btn">Flash1</button>
+      <button id="flash2-btn">Flash2</button>
+      <button id="flash3-btn">Flash3</button>
+      <button id="ring-btn">Ring</button>
+      <button id="background-btn">Background</button>
+      <button id="softbox-btn">Big reflector</button>
 
-      <%= form_for :canvas, url: project_canvas_url, method: :patch, html: { id: "save-btn" } do |f|%>
+      <%= form_for :canvas, url: project_canvases_url, method: :post, html: { id: "save-btn" } do |f|%>
         <%= f.hidden_field :description, id: 'canvas_json' %>
         <%= f.hidden_field :photo, id: 'canvas_svg' %>
-        <%= f.submit 'Save canvas', id: 'save-submit' %>
+        <%= f.submit 'Save canvas' %>
       <% end %>
     </div>
-    <div class="canvas-container">
+    <div class="canvas-container col-10">
       <canvas id="canvas" width="1000px" height="600px" data-canvas-json="<%= @canvas.description %>" ></canvas>
     </div>
     <div class="bottom-navigation" id="bottom-navigation"></div>
