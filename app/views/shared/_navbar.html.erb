@@ -1,13 +1,15 @@
-
-
- <div class="navbar-container">
+<div class="navbar-container">
   <div class="navbar-right-side">
     <% if user_signed_in? %>
-        <%= link_to "LITE-IT", "#", class: "btn-navbar__logged-in logo" %>
-        <%= link_to "Welcome, #{current_user.fname}", "#", class: "btn-navbar__logged-in" %>
-        <%= link_to "Create", new_project_path, class: "btn-navbar__logged-in" %>
-        <%= link_to "Browse", projects_path, class: "btn-navbar__logged-in" %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-navbar__logged-in" %>
+    <%= link_to "LITE-IT", root_path, class: "btn-navbar-logged-in logo" %>
+    <%= link_to "Welcome, #{current_user.fname}", "#", class: "btn-navbar-logged-in" %>
+    <% if !@project.nil? && !@project.id.nil? %>
+    <%= link_to "Edit", edit_project_path(@project), class: "btn-navbar-logged-in" %>
+    <% else %>
+    <%= link_to "Create", new_project_path, class: "btn-navbar-logged-in" %>
+    <% end %>
+    <%= link_to "Browse", projects_path, class: "btn-navbar-logged-in" %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-navbar-logged-in" %>
     <% else %>
         <%= link_to "LITE-IT", "#", class: "btn__navbar logo" %>
         <%= link_to "Hide me", "#", class: "btn__navbar", style: "color:white" %>
