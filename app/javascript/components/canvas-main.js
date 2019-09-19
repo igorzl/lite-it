@@ -110,7 +110,7 @@ const addRectangle = () => {
     left: 100,
     width: 60,
     height: 70,
-    fill: 'red'
+    fill: 'black'
   });
 
   canvas.add(rect);
