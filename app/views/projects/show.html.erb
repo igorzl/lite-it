@@ -30,6 +30,12 @@
               <h2><%= @project.name %></h2>
               <p><%= @project.description %></p>
             </div>
+
+            <div class=“edit-delete-project”>
+              <%= link_to "Edit", edit_project_path %>
+              <%= link_to "Delete", projects_path, method: :delete, remote: true %>
+            </div>
+
           </div>
 
         </div>

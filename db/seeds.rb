@@ -14,6 +14,9 @@ Project.destroy_all
 puts "Cleaning users.."
 User.delete_all
 
+
+user = User.create(email: "igor@igor.com", password: "123456", fname: "John", lname: "Brown")
+user.save
 user = User.create(email: "abc@abc.com", password: "123456", fname: "John", lname: "Brown")
 user.save
 
@@ -121,7 +124,7 @@ end
 # cnv.remote_photo_url = url
 # cnv.save
 
-puts "Creating 10 projects"
+puts "Creating 11 projects"
 project_names = [
   "032719_British Vogue", "051119_WSJ", "022519_W Magazine", "080319_Paris Vogue", "121718_WSJ",  "121218_Femme", "092718_Cosmopolitan", "062119_ID Magazine", "041118_Brazilian Vogue", "01312019_Harpers Bazaar", "082518_Vogue"]
 
