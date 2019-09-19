@@ -1,6 +1,6 @@
 <div class="dashboard-container">
   <% if @projects.nil? %>
-    <p>display div: Waiting for your first project</p>
+    <p>Waiting for your first project</p>
   <% else %>
     <% @projects.each_with_index do |project, index| %>
       <%= link_to  project_path(project), class: "card-link" do  %>
