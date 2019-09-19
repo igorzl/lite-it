@@ -154,9 +154,9 @@
   width: 180px;
 }
 
-.btn-prj:last-of-type {
-  margin:0;
-}
+// .btn-prj:last-of-type {
+//   margin:0;
+// }
 
 .btn-navbar {
   @extend .btn-ghost;
@@ -164,6 +164,7 @@
   width: 20%;
   text-align: center;
   // height: 50px;
+  margin: 0;
 }
 
 .btn-helper {
@@ -189,9 +190,9 @@
   // height: 50px;
 }
 
-.btn-navbar:last-of-type {
-  margin:0;
-}
+// .btn-navbar:last-of-type {
+//   margin:0;
+// }
 .logo {
   font-weight: bold;
   font-size: 16px;
