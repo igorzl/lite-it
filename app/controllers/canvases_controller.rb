@@ -28,6 +28,7 @@ class CanvasesController < ApplicationController
   end
 
   def show
+    authorize @canvas
   end
   
   def destroy
