@@ -1,6 +1,8 @@
 import { fabric } from 'fabric';
 
-var canvas = new fabric.Canvas('canvas');
+var canvas = new fabric.Canvas('canvas', {
+  isDrawingMode: false
+});
 
 // Loading canvas New or from DB
 let loadCanvas = () => {
@@ -98,21 +100,34 @@ addSaveBtn.addEventListener('submit', e => {
 
   canvas_json.value = saveCanvas();
   canvas_svg.value = rasterize();
-
   addSaveBtn.submit();
+  setTimeout(() => {
+    document.getElementById('save-submit').disabled = false;
+  }, 100);
 });
 
-// Parsing svg to the canvas
+const drawingMode = () => {
+  console.log('drawing mode toggle');
+  canvas.isDrawingMode = !canvas.isDrawingMode;
+  if (canvas.isDrawingMode) {
+    addDrawingBtn.innerHTML = 'Exit drawing mode';
+  } else {
+    addDrawingBtn.innerHTML = 'Drawing mode';
+  }
+};
+let addDrawingBtn = document.getElementById('drawing-mode-btn');
+addDrawingBtn.addEventListener('click', drawingMode);
+
 // var group = [];
 // fabric.loadSVGFromURL(
-//   '/assets/photo-camera.svg',
+//   '/assets/sunlight.svg',
 //   function(objects, options) {
 //     var loadedObjects = new fabric.Group(group);
 //     loadedObjects.set({
 //       left: 480,
 //       top: 500,
-//       scaleX: 0.1,
-//       scaleY: 0.1
+//       scaleX: 1,
+//       scaleY: 1
 //     });
 //     canvas.add(loadedObjects);
 //     canvas.renderAll();

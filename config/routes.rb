@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   # root to: 'projects'
   get "about", to: "pages#about"
   resources :projects, only: [:index, :show, :create, :new, :edit, :update, :destroy] do
-    resources :canvases, only: [:create, :show, :new, :edit]
+    resources :canvases
   end
 end
