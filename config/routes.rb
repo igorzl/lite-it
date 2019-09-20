@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'projects#index'
+  # root to: 'projects#index'
+  root to: 'pages#home'
   get "about", to: "pages#about"
-  resources :projects, only: [:index, :show, :create, :new, :edit, :update, :destroy] do
-    resources :canvases
+  resources :canvases, only: [ :update, :destroy ]
+  resources :projects do
+    resources :canvases, only: [ :new, :create, :edit, :show ]
   end
 end
