@@ -12,7 +12,7 @@ class CanvasesController < ApplicationController
     authorize @canvas
     @canvas.project = Project.find(params[:project_id])
     @canvas.save
-    redirect_to(project_path(@canvas.project) ,:notice => 'Canvas saved.')
+    redirect_to(edit_project_canvas_path(@canvas.project, @canvas),:notice => 'Canvas saved.')
   end
 
   def edit
