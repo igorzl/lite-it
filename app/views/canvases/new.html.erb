@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row pt-4">
     <div class="top-navigation col-2">
-      <button id="drawing-mode-btn">Draw</button>
-      <button id="delete-btn">Delete selected</button>
+      <button id="drawing-mode-btn"><i class="fas fa-paint-brush"></i></button>
+      <button id="delete-btn">icon('fas', 'flag')</button>
       <button id="rectangle-btn">Rectangle</button>
       <button id="text-btn">Text</button>
       <button id="corner-btn">V Flat</button>
@@ -13,6 +13,7 @@
       <button id="ring-btn">Ring</button>
       <button id="background-btn">Background</button>
       <button id="softbox-btn">Big reflector</button>
+      <i class="fas fa-pencil-paintbrush"></i>
 
       <%= form_for :canvas, url: project_canvases_url, method: :post, html: { id: "save-btn" } do |f|%>
         <%= f.hidden_field :description, id: 'canvas_json' %>
