@@ -3,8 +3,7 @@ Rails.application.routes.draw do
   # root to: 'projects#index'
   root to: 'pages#home'
   get "about", to: "pages#about"
-  resources :canvases, only: [ :update, :destroy ]
-  resources :projects do
-    resources :canvases, only: [ :new, :create, :edit, :show ]
+  resources :projects, only: [:index, :show, :create, :new, :edit, :update, :destroy] do
+    resources :canvases
   end
 end
