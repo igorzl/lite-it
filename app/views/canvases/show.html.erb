@@ -14,7 +14,11 @@
 <%= simple_form_for([ @canvas.project, @canvas ]) do |form| %>
   <%= form.input :notes, as: :text, input_html: { value: @canvas.notes, style: 'min-height: 120px;'} %>
   <div class="form-actions btn-white">
-    <%= form.button :submit, 'Add Notes' %>
+    <% if @canvas.notes.nil? %>
+      <%= form.button :submit, 'Add Notes' %>
+    <% else %>
+      <%= form.button :submit, 'Update Notes' %>
+    <% end %>
   </div>
 <% end %>
 </div>
