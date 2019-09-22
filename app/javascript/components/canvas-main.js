@@ -1,4 +1,5 @@
 import { fabric } from 'fabric';
+import { targetEquip } from './canvas-objects';
 
 var canvas = new fabric.Canvas('canvas', {
   isDrawingMode: false
@@ -27,10 +28,6 @@ let loadCanvas = () => {
         });
         canvas.add(loadedObjects);
         canvas.renderAll();
-      },
-      function(item, object) {
-        object.set('id', item.getAttribute('id'));
-        group.push(object);
       }
     );
   }
@@ -103,172 +100,25 @@ let addDrawingBtn = document.getElementById('drawing-mode-btn');
 addDrawingBtn.addEventListener('click', drawingMode);
 
 // OBJECTS FOR CANVAS
-
-const addRectangle = () => {
-  var rect = new fabric.Rect({
-    top: 100,
-    left: 100,
-    width: 60,
-    height: 70,
-    fill: 'black'
+const addObject = link => {
+  fabric.loadSVGFromURL(link, function(objects, options) {
+    var loadedObjects = fabric.util.groupSVGElements(objects, options);
+    loadedObjects.set({
+      left: fabric.util.getRandomInt(25, 950),
+      top: fabric.util.getRandomInt(25, 550),
+      scaleX: 0.5,
+      scaleY: 0.5
+    });
+    canvas.add(loadedObjects);
+    canvas.renderAll();
   });
-
-  canvas.add(rect);
 };
 
-const addWindow = () => {
-  fabric.loadSVGFromURL(
-    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898175/sunlight_wt2ugn.svg',
-    function(objects, options) {
-      var loadedObjects = fabric.util.groupSVGElements(objects, options);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 1,
-        scaleY: 1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    }
-  );
-};
-
-const addBackground = () => {
-  fabric.loadSVGFromURL(
-    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898167/background_wtu5nq.svg',
-    function(objects, options) {
-      var loadedObjects = fabric.util.groupSVGElements(objects, options);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    }
-  );
-};
-
-const addCorner = () => {
-  fabric.loadSVGFromURL(
-    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898167/corner_szqagi.svg',
-    function(objects, options) {
-      var loadedObjects = fabric.util.groupSVGElements(objects, options);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    }
-  );
-};
-
-const addFlash1 = () => {
-  fabric.loadSVGFromURL(
-    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898167/flash-1_lgz4ag.svg',
-    function(objects, options) {
-      var loadedObjects = fabric.util.groupSVGElements(objects, options);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    }
-  );
-};
-
-const addFlash2 = () => {
-  fabric.loadSVGFromURL(
-    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898167/flash-2_ijchde.svg',
-    function(objects, options) {
-      var loadedObjects = fabric.util.groupSVGElements(objects, options);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    }
-  );
-};
-
-const addFlash3 = () => {
-  fabric.loadSVGFromURL(
-    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898167/flash-3_ymrwmu.svg',
-    function(objects, options) {
-      var loadedObjects = fabric.util.groupSVGElements(objects, options);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    }
-  );
-};
-
-const addRing = () => {
-  fabric.loadSVGFromURL(
-    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898169/ring_hksgjn.svg',
-    function(objects, options) {
-      var loadedObjects = fabric.util.groupSVGElements(objects, options);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    }
-  );
-};
-
-const addSoftbox = () => {
-  fabric.loadSVGFromURL(
-    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898175/softbox_zdmqzo.svg',
-    function(objects, options) {
-      var loadedObjects = fabric.util.groupSVGElements(objects, options);
-      loadedObjects.set({
-        left: 480,
-        top: 500,
-        scaleX: 0.1,
-        scaleY: 0.1
-      });
-      canvas.add(loadedObjects);
-      canvas.renderAll();
-    }
-  );
-};
+const allEquipment = document.querySelectorAll('#equip');
+allEquipment.forEach(eq => {
+  eq.addEventListener('click', e => {
+    addObject(targetEquip[e.target.innerHTML]);
+  });
+});
 
 // Adding eventlistemners for objects
-
-let addRectBtn = document.getElementById('rectangle-btn');
-addRectBtn.addEventListener('click', addRectangle);
-let addWindowBtn = document.getElementById('window-btn');
-addWindowBtn.addEventListener('click', addWindow);
-let addBackgroundBtn = document.getElementById('background-btn');
-addBackgroundBtn.addEventListener('click', addBackground);
-let addCornerBtn = document.getElementById('corner-btn');
-addCornerBtn.addEventListener('click', addCorner);
-let addFlash1Btn = document.getElementById('flash1-btn');
-addFlash1Btn.addEventListener('click', addFlash1);
-let addFlash2Btn = document.getElementById('flash2-btn');
-addFlash2Btn.addEventListener('click', addFlash2);
-let addFlash3Btn = document.getElementById('flash3-btn');
-addFlash3Btn.addEventListener('click', addFlash3);
-let addRingBtn = document.getElementById('ring-btn');
-addRingBtn.addEventListener('click', addRing);
-let addSoftboxBtn = document.getElementById('softbox-btn');
-addSoftboxBtn.addEventListener('click', addSoftbox);
