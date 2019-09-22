@@ -16,8 +16,8 @@
       <i class="fas fa-pencil-paintbrush"></i>
 
       <%= form_for :canvas, url: project_canvases_url, method: :post, html: { id: "save-btn" } do |f|%>
-        <%= f.hidden_field :description, id: 'canvas_json' %>
-        <%= f.hidden_field :photo, id: 'canvas_svg' %>
+        <%= f.hidden_field :state_json, id: 'canvas_json' %>
+        <%= f.hidden_field :canvas_svg, id: 'canvas_svg' %>
         <%= f.submit 'Save canvas' %>
       <% end %>
     </div>

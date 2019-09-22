@@ -12,7 +12,7 @@ class CanvasesController < ApplicationController
     authorize @canvas
     @canvas.project = Project.find(params[:project_id])
     @canvas.save
-    redirect_to(edit_project_canvas_path(@canvas.project, @canvas) ,:notice => 'Canvas ssaved.')
+    redirect_to(edit_project_canvas_path(@canvas.project, @canvas) ,:notice => 'Canvas saved.')
   end
   
   def edit
@@ -21,8 +21,8 @@ class CanvasesController < ApplicationController
 
   def update
     authorize @canvas
-    @canvas.description = params[:canvas][:description]
-    @canvas.photo = params[:canvas][:photo]
+    @canvas.state_json = params[:canvas][:state_json]
+    @canvas.photo = params[:canvas][:canvas_svg]
     @canvas.save
   end
 
@@ -41,7 +41,7 @@ class CanvasesController < ApplicationController
   end
 
   def canvas_params
-    params.require(:canvas).permit(:description, :photo, :project)
+    params.require(:canvas).permit(:state_json, :canvas_svg, :project)
   end
 
 end
