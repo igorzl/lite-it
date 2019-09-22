@@ -40,7 +40,7 @@ loadCanvas();
 // Adding text
 
 function addTextbox() {
-  var text = new fabric.Textbox('Lorum ipsum dolor sit amet', {
+  var text = new fabric.Textbox('Your note', {
     left: 50,
     top: 50,
     width: 150,
