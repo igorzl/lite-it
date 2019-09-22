@@ -1,27 +1,32 @@
 <div class="container">
   <div class="row pt-4">
-    <div class="top-navigation col-2">
-      <button id="drawing-mode-btn">Draw</button>
-      <button id="delete-btn">Delete selected</button>
-      <button id="rectangle-btn">Rectangle</button>
-      <button id="text-btn">Text</button>
-      <button id="corner-btn">V Flat</button>
-      <button id="window-btn">Window</button>
-      <button id="flash1-btn">Flash1</button>
-      <button id="flash2-btn">Flash2</button>
-      <button id="flash3-btn">Flash3</button>
-      <button id="ring-btn">Ring</button>
-      <button id="background-btn">Background</button>
-      <button id="softbox-btn">Big reflector</button>
 
-      <%= form_for :canvas, url: project_canvases_url, method: :post, html: { id: "save-btn" } do |f|%>
-        <%= f.hidden_field :description, id: 'canvas_json' %>
-        <%= f.hidden_field :photo, id: 'canvas_svg' %>
-        <%= f.submit 'Save canvas' %>
+    <div class="top-side-navigation col-2"> <%= @canvas.name.nil? ? "Title" : @canvas.name %></div>
+    <div class="top-navigation col-10">
+      <%= form_for :canvas, url: project_canvas_url(@canvas), method: :patch, html: { id: "save-btn" } do |f|%>
+        <%= f.hidden_field :state_json, id: 'canvas_json' %>
+        <%= f.hidden_field :canvas_svg, id: 'canvas_svg' %>
+        <%= f.button '<i class="far fa-save"></i>'.html_safe, id: 'save-submit', class: 'crud-btn float-right' %>
       <% end %>
     </div>
-    <div class="canvas-container col-10">
-      <canvas id="canvas" width="1000px" height="600px" data-canvas-json="<%= @canvas.description %>" ></canvas>
+    <div class="side-navigation col-1">
+      <button id="drawing-mode-btn" class="nav_btn"><i class="fas fa-paint-brush"></i></button>
+      <button id="delete-btn" class="nav_btn">icon('fas', 'flag')</button>
+      <button id="rectangle-btn" class="nav_btn">Rectangle</button>
+      <button id="text-btn" class="nav_btn">Text</button>
+      <button id="corner-btn" class="nav_btn">V Flat</button>
+      <button id="window-btn" class="nav_btn">Window</button>
+      <button id="flash1-btn" class="nav_btn">Flash1</button>
+      <button id="flash2-btn" class="nav_btn">Flash2</button>
+      <button id="flash3-btn" class="nav_btn">Flash3</button>
+      <button id="ring-btn" class="nav_btn">Ring</button>
+      <button id="background-btn" class="nav_btn">Background</button>
+      <button id="softbox-btn" class="nav_btn">Big reflector</button>
+
+
+    </div>
+    <div class="canvas-container col-11">
+      <canvas id="canvas" width="1000px" height="600px" data-canvas-json="<%= @canvas.state_json %>" ></canvas>
     </div>
     <div class="bottom-navigation" id="bottom-navigation"></div>
   </div>
