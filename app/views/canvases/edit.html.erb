@@ -1,7 +1,16 @@
 <div class="container">
   <div class="row pt-4">
-    <div class="top-navigation col-2">
-      <button id="drawing-mode-btn"><i class="fab fa-pencil-paintbrush"></i></button>
+
+    <div class="top-side-navigation col-2"> <%= @canvas.name.nil? ? "Title" : @canvas.name %></div>
+    <div class="top-navigation col-10">
+      <%= form_for :canvas, url: project_canvas_url(@canvas), method: :patch, html: { id: "save-btn" } do |f|%>
+        <%= f.hidden_field :state_json, id: 'canvas_json' %>
+        <%= f.hidden_field :canvas_svg, id: 'canvas_svg' %>
+        <%= f.submit 'Save canvas', id: 'save-submit' %>
+      <% end %>
+    </div>
+    <div class="side-navigation col-2">
+      <button id="drawing-mode-btn"><i class="fas fa-paint-brush"></i></button>
       <button id="delete-btn">icon('fas', 'flag')</button>
       <button id="rectangle-btn">Rectangle</button>
       <button id="text-btn">Text</button>
@@ -14,11 +23,7 @@
       <button id="background-btn">Background</button>
       <button id="softbox-btn">Big reflector</button>
 
-      <%= form_for :canvas, url: project_canvases_url, method: :patch, html: { id: "save-btn" } do |f|%>
-        <%= f.hidden_field :state_json, id: 'canvas_json' %>
-        <%= f.hidden_field :canvas_svg, id: 'canvas_svg' %>
-        <%= f.submit 'Save canvas' %>
-      <% end %>
+
     </div>
     <div class="canvas-container col-10">
       <canvas id="canvas" width="1000px" height="600px" data-canvas-json="<%= @canvas.state_json %>" ></canvas>
