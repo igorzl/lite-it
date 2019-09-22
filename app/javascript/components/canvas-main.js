@@ -15,16 +15,15 @@ let loadCanvas = () => {
     });
   } else {
     console.log('Load new');
-    var group = [];
     fabric.loadSVGFromURL(
-      'https://res.cloudinary.com/dkjjz54zd/image/upload/v1568898172/photo-camera_xesj7w.svg',
+      'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161984/subject_position_pveqoj.svg',
       function(objects, options) {
-        var loadedObjects = new fabric.Group(group);
+        var loadedObjects = fabric.util.groupSVGElements(objects, options);
         loadedObjects.set({
           left: 480,
-          top: 500,
-          scaleX: 0.1,
-          scaleY: 0.1
+          top: 300,
+          scaleX: 0.5,
+          scaleY: 0.5
         });
         canvas.add(loadedObjects);
         canvas.renderAll();

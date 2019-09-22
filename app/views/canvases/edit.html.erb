@@ -70,6 +70,7 @@
       <%= form_for :canvas, url: project_canvas_url(@canvas), method: :patch, html: { id: "save-btn" } do |f|%>
         <%= f.hidden_field :state_json, id: 'canvas_json' %>
         <%= f.hidden_field :canvas_svg, id: 'canvas_svg' %>
+        <%= f.hidden_field :canvas_svg_cache %>
         <%= f.button 'Save', id: 'save-submit', class: "nav_btn" %>
       <% end %>
       <button id="delete-btn" class="nav_btn">Delete</button>
@@ -79,6 +80,9 @@
     <div class="canvas-cont col-10">
       <canvas id="canvas" width="1000px" height="600px" data-canvas-json="<%= @canvas.state_json %>" ></canvas>
     </div>
+  </div>
+<div style="background: white;">
+  <%= cl_image_tag @canvas.canvas_svg, height: 500, width: 1000, crop: :fill %>
   </div>
 </div>
 <%= javascript_pack_tag 'canvas' %>

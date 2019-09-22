@@ -24,6 +24,7 @@ class CanvasesController < ApplicationController
     @canvas.state_json = params[:canvas][:state_json]
     @canvas.photo = params[:canvas][:canvas_svg]
     @canvas.save
+    #raise
   end
 
   def show

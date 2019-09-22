@@ -19,49 +19,49 @@
       </div>
       <div class="nav_btn drop"><p>Camera</p>
         <ul class="drop-content">
-          <li>35 mm</li>
-          <li>Medium format</li>
-          <li>View camera</li>
+          <li id="equip">35 mm</li>
+          <li id="equip">Medium format</li>
+          <li id="equip">View camera</li>
         </ul>
       </div>
       <div class="nav_btn drop"><p>Light</p>
         <ul class="drop-content">
-          <li>Strobe</li>
-          <li>Strobe + standart reflector</li>
-          <li>Strobe + umbrella</li>
-          <li>Strobe + softbox</li>
-          <li>Strobe + beauty dish</li>
-          <li>Strobe + med reflector</li>
-          <li>Strobe + long reflectore</li>
-          <li>Strobe + XL reflector</li>
+          <li id="equip" type="Strobe">Strobe</li>
+          <li id="equip">Strobe + standart reflector</li>
+          <li id="equip">Strobe + umbrella</li>
+          <li id="equip">Strobe + softbox</li>
+          <li id="equip">Strobe + beauty dish</li>
+          <li id="equip">Strobe + med reflector</li>
+          <li id="equip">Strobe + long reflectore</li>
+          <li id="equip">Strobe + XL reflector</li>
         </ul>
       </div>
       <div class="nav_btn drop"><p>Grip</p>
         <ul class="drop-content">
-          <li>Large boom</li>
-          <li>Frame</li>
+          <li id="equip">Large boom</li>
+          <li id="equip">Frame</li>
         </ul>
       </div>
       <div class="nav_btn drop"><p>V Flats / Reflectors</p>
         <ul class="drop-content">
-          <li>V Flat - Black</li>
-          <li>V Flat - White</li>
-          <li>V Flat Open</li>
-          <li>Silver reflector</li>
-          <li>White reflector</li>
+          <li id="equip">V Flat - Black</li>
+          <li id="equip">V Flat - White</li>
+          <li id="equip">V Flat Open</li>
+          <li id="equip">Silver reflector</li>
+          <li id="equip">White reflector</li>
         </ul>
       </div>
       <div class="nav_btn drop"><p>Misc</p>
         <ul class="drop-content">
-          <li>Cube</li>
-          <li>Work light</li>
+          <li id="equip">Cube</li>
+          <li id="equip">Work light</li>
         </ul>
       </div>
       <div class="nav_btn drop"><p>Environment</p>
         <ul class="drop-content">
-          <li>Seamless paper</li>
-          <li>Wall</li>
-          <li>Window</li>
+          <li id="equip">Seamless paper</li>
+          <li id="equip">Wall</li>
+          <li id="equip">Window</li>
         </ul>
       </div>
       <div id="text-btn" class="nav_btn">Text</div>
@@ -70,6 +70,7 @@
       <%= form_for :canvas, url: project_canvases_url, method: :post, html: { id: "save-btn" } do |f|%>
         <%= f.hidden_field :state_json, id: 'canvas_json' %>
         <%= f.hidden_field :canvas_svg, id: 'canvas_svg' %>
+        <%= f.hidden_field :canvas_svg_cache %>
         <%= f.button 'Save', id: 'save-submit', class: "nav_btn" %>
       <% end %>
        <button id="delete-btn" class="nav_btn">Delete</button>
