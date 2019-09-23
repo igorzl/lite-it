@@ -6,7 +6,7 @@ class CanvasesController < ApplicationController
     @canvas = Canvas.new
     authorize @canvas
   end
-  
+
   def create
     @canvas = Canvas.new(canvas_params)
     authorize @canvas
@@ -14,22 +14,37 @@ class CanvasesController < ApplicationController
     @canvas.save
     redirect_to(edit_project_canvas_path(@canvas.project, @canvas) ,:notice => 'Canvas saved.')
   end
-  
+
   def edit
     authorize @canvas
   end
 
   def update
     authorize @canvas
-    @canvas.state_json = params[:canvas][:state_json]
-    @canvas.canvas_svg = params[:canvas][:canvas_svg]
-    @canvas.save
+    if params[:canvas][:notes].nil?
+      @canvas.state_json = params[:canvas][:state_json]
+      @canvas.photo = params[:canvas][:canvas_svg]
+      @canvas.save
+    else
+      @canvas.notes = params[:canvas][:notes]
+      if @canvas.save
+        respond_to do |format|
+          format.html { redirect_to edit_canvas_path(@canvas) }
+          format.js
+        end
+      else
+        respond_to do |format|
+          format.html { render 'canvases/show' }
+          format.js
+        end
+      end
+    end
   end
 
   def show
     authorize @canvas
   end
-  
+
   def destroy
     Canvas.destroy(params[:id])
   end
@@ -41,7 +56,7 @@ class CanvasesController < ApplicationController
   end
 
   def canvas_params
-    params.require(:canvas).permit(:state_json, :canvas_svg, :project)
+    params.require(:canvas).permit(:state_json, :canvas_svg, :project, :notes)
   end
 
 end

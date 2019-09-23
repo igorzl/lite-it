@@ -6,7 +6,7 @@
     <div class="top-side-navigation col-2"> <%= @canvas.name.nil? ? "Title" : @canvas.name %></div>
     <div class="top-navigation col-10">
       <%= link_to  '<i class="fas fa-times"></i>'.html_safe, project_path(@canvas), class: 'crud-btn d-inline float-right' %>
-      <%= form_for :canvas, url: project_canvas_url(@canvas), method: :patch, html: { id: "save-btn" } do |f|%>
+      <%= form_for :canvas, url: canvas_url(@canvas), method: :patch, html: { id: "save-btn" } do |f|%>
         <%= f.hidden_field :state_json, id: 'canvas_json' %>
         <%= f.hidden_field :canvas_svg, id: 'canvas_svg' %>
         <%= f.button '<i class="far fa-save"></i>'.html_safe, id: 'save-submit', class: 'crud-btn d-inline float-right' %>

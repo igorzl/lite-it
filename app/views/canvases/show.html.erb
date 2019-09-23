@@ -1,8 +1,17 @@
-<div class="container">
-  <div class="row">
-    <div class="canvas-container">
-      <canvas id="canvas" width="1000px" height="600px" data-canvas-json="<%= @canvas.state_json %>" ></canvas>
-    </div>
-  </div>
+<%= render 'canvases/form', canvas: @canvas %>
+
+<div class="canvas-notes-container">
+
+   <%= render 'canvases/note', canvas: @canvas %>
 </div>
-<%= javascript_pack_tag 'canvas-show' %>
+
+
+
+<script>
+  let button = document.getElementById("btn_add_notes");
+  button.addEventListener("click", () => {
+
+    let notesDiv = document.querySelector(".canvas-notes-container");
+    notesDiv.innerHTML = " <%= j render 'canvases/note_form', canvas: @canvas %>"
+})
+</script>
