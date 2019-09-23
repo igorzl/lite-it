@@ -1,0 +1,17 @@
+<% projects.each_with_index do |project, index| %>
+  <li class="list-unstyled" id="<%= project.id %>">
+    <%= link_to project_path(project), class: "card-link", id: dom_id(project) do  %>
+      <div class="project-card <%= 'project-card-left' if index.odd? %>">
+        <div class="project-title <%=  index.odd? ? 'project-title-left' :'project-title-rt' %> " >
+          <%= project.name %>
+        </div>
+          <div class="img">
+          <% if project.image %>
+              <%= cl_image_tag project.image %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </li>
+<% end %>
+

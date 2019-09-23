@@ -19,7 +19,6 @@
 
 .project-card {
   display: flex;
-  background-color: white;
   align-items: center;
   margin: 0px;
   justify-content: space-between;
@@ -34,6 +33,7 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 22px;
   font-size: 30px;
+  background-color: white;
   margin: 0px;
   padding: 32px;
   border: 1px solid black;
