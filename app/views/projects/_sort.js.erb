@@ -1,6 +1,8 @@
 
 
 const cards = document.getElementsByClassName('card-link');
-
+cards.forEach(card) => {
+  console.log(card.id.match(/[0-9]+/));
+}
 
 "<%= j render 'projects/sort', project: @project %>";
