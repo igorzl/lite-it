@@ -1,0 +1,8 @@
+<%= simple_form_for(canvas, remote: true, method: :patch) do |form| %>
+
+  <%= form.input :notes, as: :text, label: false, input_html: { value: canvas.notes, style: 'min-height: 120px;'} %>
+  <div class="form-actions btn_white_show">
+    <%= form.button :submit, 'Save' %>
+  </div>
+
+<% end %>
