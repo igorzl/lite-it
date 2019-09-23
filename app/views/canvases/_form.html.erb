@@ -13,36 +13,14 @@
     </div>
 
   <!--
-    Kirill part starts here
+    Canvas part starts here
   -->
     <div class="canvas-show-canvas">
       <img src="" alt="Here will be canvas">
     </div>
   <!--
-    Kirill part ends here
+    Canvas part ends here
   -->
   </div>
 
 </div>
-
-<!-- <div class="canvas-notes-container">
-  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-</div>
- -->
-
-<!--
-<div class="canvas-notes-container">
-<%= simple_form_for(@canvas, remote: true) do |form| %>
-  <%= form.input :notes, as: :text, input_html: { value: @canvas.notes, style: 'min-height: 120px;'} %>
-  <div class="form-actions btn-white">
-    <% if @canvas.notes.nil? %>
-      <%= form.button :submit, 'Add Notes' %>
-    <% else %>
-      <%= form.button :submit, 'Update Notes' %>
-    <% end %>
-  </div>
-<% end %>
-</div>
- -->
-
-<%= javascript_pack_tag 'canvas-show' %>
