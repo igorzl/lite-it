@@ -1,6 +1,6 @@
 class CanvasesController < ApplicationController
 
-  before_action :find_canvas, only: [:show, :edit, :update, :destroy, :add_notes]
+  before_action :find_canvas, only: [:show, :edit, :update, :destroy]
 
   def new
     @canvas = Canvas.new
