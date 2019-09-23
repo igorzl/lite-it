@@ -31,4 +31,8 @@ class CanvasPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def add_notes?
+    project = Project.find(record.project_id)
+    project.user == user
+  end
 end

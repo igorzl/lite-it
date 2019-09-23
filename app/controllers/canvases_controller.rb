@@ -20,11 +20,26 @@ class CanvasesController < ApplicationController
   end
 
   def update
+    # raise
     authorize @canvas
-    @canvas.state_json = params[:canvas][:state_json]
-    @canvas.photo = params[:canvas][:canvas_svg]
-    @canvas.notes = params[:canvas][:notes]
-    @canvas.save
+    if params[:canvas][:notes].nil?
+      @canvas.state_json = params[:canvas][:state_json]
+      @canvas.photo = params[:canvas][:canvas_svg]
+      @canvas.save
+    else
+      @canvas.notes = params[:canvas][:notes]
+      if @canvas.save
+        respond_to do |format|
+          format.html { redirect_to edit_canvas_path(@canvas) }
+          format.js
+        end
+      else
+        respond_to do |format|
+          format.html { render 'canvases/show' }
+          format.js
+        end
+      end
+    end
   end
 
   def show
@@ -42,7 +57,7 @@ class CanvasesController < ApplicationController
   end
 
   def canvas_params
-    params.require(:canvas).permit(:state_json, :canvas_svg, :project)
+    params.require(:canvas).permit(:state_json, :canvas_svg, :project, :notes)
   end
 
 end
