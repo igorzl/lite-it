@@ -1,15 +1,24 @@
 class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit, :update, :destroy]
+  # skip_before_action :verify_authenticity_token, only: [:sort]
 
   def index
     @projects = policy_scope(Project.order(:position))
   end
 
   def sort
-    params[:project].each_with_index do |id, index|
-      Project.where(id: id).update_all(position: index = 1)
+    params[:order].each do |index, id|
+      @project = Project.find(id)
+      authorize @project
+      @project.position = index
+      @project.save
     end
-    head :ok
+    @projects = Project.order(:position)
+    respond_to do |format|
+      format.js {render json: @projects}
+      # format.html {redirect_to projects_path}
+    end
+    # render formats: :js, handlers: :erb
   end
 
   def show

@@ -6,41 +6,7 @@
 
   <% else %>
     <ul id="projects">
-      <% @projects.each_with_index do |project, index| %>
-        <li class="list-unstyled">
-          <%= link_to  project_path(project), class: "card-link", remote: :true, id: project.id do  %>
-          <% if index.even? %>
-            <div class="project-card">
-              <div class="project-title project-title-rt">
-
-                <%= project.name %>
-              </div>
-                <div class="img">
-
-              <% if project.image %>
-                  <%= cl_image_tag project.image %>
-              <% end %>
-                </div>
-
-            </div>
-          <% else %>
-            <div class="project-card project-card-left">
-              <div class="project-title project-title-left">
-                <%= project.name %>
-              </div>
-
-                <div class="img">
-
-              <% if project.image %>
-                  <%= cl_image_tag project.image %>
-              <% end %>
-                </div>
-
-            </div>
-            <% end %>
-          <% end %>
-        </li>
-      <% end %>
+      <%= render 'projects/index-partial', projects: @projects %>
     </ul>
   <% end %>
 </div>
