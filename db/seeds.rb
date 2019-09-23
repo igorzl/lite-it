@@ -134,26 +134,25 @@ photos = ["https://www.artandcommerce.com/Doc/AAC/Media/TR1_COMP/47/34/96/c7/ACR
   "https://schweizerkulturundfreizeit.files.wordpress.com/2017/01/24ffd-aac386994.jpg",
   "https://1.bp.blogspot.com/-SFigvcDDpHM/VwjBuFx1nUI/AAAAAAAEqDI/7RHZy9DG3TkBUG_nE0vSKWr-NbBE1MSIw/s1600/Susan_Sarandon-INTERVIEW-April_2016-005.jpg",
   "https://media.wmagazine.com/photos/5d4d6259f0adfe0008a905cf/master/pass/WM201904BEAU02_largeNoWatermark.jpg",
-  "https://scontent-lax3-1.cdninstagram.com/vp/2c1e3cc4e656ee38fc089365b33ac3ce/5D8859F2/t51.2885-15/e35/60099110_120676989144499_5724427234911167929_n.jpg?_nc_ht=scontent-lax3-1.cdninstagram.com&se=7&ig_cache_key=MjA1MzkxNzM2NjU0MDAxOTIwMg%3D%3D.2",
+  # "https://scontent-lax3-1.cdninstagram.com/vp/2c1e3cc4e656ee38fc089365b33ac3ce/5D8859F2/t51.2885-15/e35/60099110_120676989144499_5724427234911167929_n.jpg?_nc_ht=scontent-lax3-1.cdninstagram.com&se=7&ig_cache_key=MjA1MzkxNzM2NjU0MDAxOTIwMg%3D%3D.2",
   "https://media.newyorker.com/photos/5c1bdefe7e716b4545919da1/master/pass/Shot_01_035_First_Choice.jpg",
   "https://media.wmagazine.com/photos/5d65ab2b7dc985000943abe5/master/pass/WM201906INEZ01.jpg",
   "http://ultimate-rihannas.com/gallery/albums/userpics/10735/006~5.jpg",
   "https://images.squarespace-cdn.com/content/v1/55f45174e4b0fb5d95b07f39/1564869761998-ADQGOVL02H22Z9QPN95C/ke17ZwdGBToddI8pDm48kHRrgb6Xx4NxFfr0H-OxbzlZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpy6KnAStM7AGPNxOGtdbFnmL2KGWa2-djY9q0QACo6dftnLVjo0X9rXRpJT_BiD204/Anok+Yai+Alton+Mason+for+Vogue+Brasil+August+2019++%2812%29.jpg"
 ]
-11.times do |i|
+10.times do |i|
   name = project_names[i]
-  description = Faker::Lorem.paragraph(sentence_count: 3)
   image = photos[i]
-  Project.create!(name: name, description: description, remote_image_url: image, user: User.first)
+  Project.create!(name: name, remote_image_url: image, user: User.first, date: "030719")
 end
 
 project = Project.find_by(name: "041118_Brazilian Vogue")
 
-description = "My outdoor shoot for spring. General lighting set up. Would still love to do some more before the end of the year. Shooting Hasselblad with a digital back. Retouching @ Dtouch, 15 west 12th street (contact Sandra). Meeting Michele and Gabriele regarding this on November 15th. Still need to set up time and place. Show 15 - 20 selects to review"
+# description = "My outdoor shoot for spring. General lighting set up. Would still love to do some more before the end of the year. Shooting Hasselblad with a digital back. Retouching @ Dtouch, 15 west 12th street (contact Sandra). Meeting Michele and Gabriele regarding this on November 15th. Still need to set up time and place. Show 15 - 20 selects to review"
 
-canvas = Canvas.create!(project: project, description: description, name: "Green Fields", remote_photo_url: 'https://66.media.tumblr.com/e287c849069799c3f35230aeecfe868c/tumblr_pxfq3nA9yH1wqm65mo1_1280.jpg')
-canvas = Canvas.create!(project: project, description: description, name: "Green Fields", remote_photo_url: 'https://www.thefashionisto.com/wp-content/uploads/2019/08/Alton-Mason-2019-Vogue-Brasil-008.jpg')
-canvas = Canvas.create!(project: project, description: description, name: "Green Fields", remote_photo_url: 'https://66.media.tumblr.com/a7de80dd0f4261cfb179f814622928ac/tumblr_pvooa14vRl1wqm65mo1_1280.jpg')
+canvas = Canvas.create!(project: project, name: "Green Fields", remote_photo_url: 'https://66.media.tumblr.com/e287c849069799c3f35230aeecfe868c/tumblr_pxfq3nA9yH1wqm65mo1_1280.jpg')
+canvas = Canvas.create!(project: project, name: "Green Fields", remote_photo_url: 'https://www.thefashionisto.com/wp-content/uploads/2019/08/Alton-Mason-2019-Vogue-Brasil-008.jpg')
+canvas = Canvas.create!(project: project, name: "Green Fields", remote_photo_url: 'https://66.media.tumblr.com/a7de80dd0f4261cfb179f814622928ac/tumblr_pvooa14vRl1wqm65mo1_1280.jpg')
 
 puts "done creating projects"
 
