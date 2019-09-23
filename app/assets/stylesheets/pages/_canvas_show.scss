@@ -3,38 +3,54 @@
   background-color: white;
   color: black;
   margin: 0 50px;
-  padding: 24px 42px;
+  padding: 24px 30px;
   min-height: 90vh;
   // justify-content: space-between;
 }
 
 .canvas-show-btns-canvas {
   display: flex;
-  justify-content: space-between;
-  flex-grow: 1;
+  justify-content: space-around;
+  width: 100%;
+  //flex-grow: 1;
 }
 
 .canvas-show-btns {
   display: flex;
-  min-width: 208px;
-  // min-height: 286px;
-  border: 1px solid black;
+  //border: 2px solid green;
   flex-direction: column;
   // justify-content: space-between;
 }
 
 .canvas-show-btns p {
-  margin-top: 35px;
+  margin-top: 15px;
+}
+
+.canvas-show-img-canvas {
+  display: flex;
+  //background-color: #EDEDED;
+  //justify-content: space-around;
+  margin-left: 20px;
+}
+
+.canvas-show-img {
+  // min-width: 150px;
+  // padding-right: 20px;
+  width: 45%;
+  min-height: 380px;
+  flex-shrink: 0;
+  background-size: cover;
+  //border: 2px solid #49692F;
 }
 
 .canvas-show-canvas {
-  display: flex;
-  background-color: gray;
-  // min-width: 15vw;
-  // min-height: 10vh;
-  border: 1px solid red;
-  width: 750px;
+  // display: flex;
+  background-color: #6C757C;
+  // border: 2px solid red;
+  // flex-grow: 1;
+  // margin-left: 65px;
   // justify-content: space-between;
+  //border: 2px solid blue;
 }
 
 .canvas-show-bottom {
@@ -44,10 +60,39 @@
 .canvas-notes-container {
   background-color: white;
   color: black;
-  padding: 10px;
+  padding: 5px 40px;
+  font-weight: lighter;
   margin: 0 50px;
   min-width: 15vw;
   min-height: 10vh;
   max-height: 25vh;
+}
+
+.canvas-name {
+  background-color: white;
+  color: black;
+  padding: 5px 40px;
+  margin: 0 50px;
+  min-width: 15vw;
+  min-height: 10vh;
+  max-height: 25vh;
+}
+
+.was-validated .form-control:valid, .form-control.is-valid {
+  background-image: none !important;
+  border-radius: 0px !important;
+  border: 1px solid black !important;
+}
+
+svg {
+  width: 620px;
+  height: 380px;
+}
+
+#render-svg {
+  svg{
+    height: 100%;
+    background: lightgrey;
+  }
 }
 
