@@ -14,7 +14,7 @@ const targetEquip = {
   'Strobe + softbox':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161924/strobe_head_and_softbox_cnrybk.svg',
   'Strobe + beauty dish':
-    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569165861/Strobe_Beauty_dish_qjbcb2.svg',
+    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569225650/Strobe_and_beauty_dish_xldfr9.svg',
   'Strobe + med reflector':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161924/strobe_head_and_medium_reflector_bx2odr.svg',
   'Strobe + long reflectore':
