@@ -1,34 +1,84 @@
-<div class="container">
-  <div class="row pt-4">
-
+<div class="cont">
+  <div class="row justify-content-center pt-4">
+<%
+=begin%>
+ 
     <div class="top-side-navigation col-2"> <%= @canvas.name.nil? ? "Title" : @canvas.name %></div>
     <div class="top-navigation col-10">
+      <%= link_to  '<i class="fas fa-times"></i>'.html_safe, project_path(@canvas), class: 'crud-btn d-inline float-right' %>
       <%= form_for :canvas, url: canvas_url(@canvas), method: :patch, html: { id: "save-btn" } do |f|%>
         <%= f.hidden_field :state_json, id: 'canvas_json' %>
         <%= f.hidden_field :canvas_svg, id: 'canvas_svg' %>
-        <%= f.button '<i class="far fa-save"></i>'.html_safe, id: 'save-submit', class: 'crud-btn float-right' %>
+        <%= f.button '<i class="far fa-save"></i>'.html_safe, id: 'save-submit', class: 'crud-btn d-inline float-right' %>
       <% end %>
-    </div>
-    <div class="side-navigation col-1">
-      <button id="drawing-mode-btn" class="nav_btn"><i class="fas fa-paint-brush"></i></button>
-      <button id="delete-btn" class="nav_btn">icon('fas', 'flag')</button>
-      <button id="rectangle-btn" class="nav_btn">Rectangle</button>
-      <button id="text-btn" class="nav_btn">Text</button>
-      <button id="corner-btn" class="nav_btn">V Flat</button>
-      <button id="window-btn" class="nav_btn">Window</button>
-      <button id="flash1-btn" class="nav_btn">Flash1</button>
-      <button id="flash2-btn" class="nav_btn">Flash2</button>
-      <button id="flash3-btn" class="nav_btn">Flash3</button>
-      <button id="ring-btn" class="nav_btn">Ring</button>
-      <button id="background-btn" class="nav_btn">Background</button>
-      <button id="softbox-btn" class="nav_btn">Big reflector</button>
+    </div> 
+<%
+=end%>
+    <div class="side-navigation col-2">
+      <div class="nav_btn"><p id="equip">Subject Position</p>
+      </div>
+      <div class="nav_btn drop"><p>Camera</p>
+        <ul class="drop-content">
+          <li id="equip">35 mm</li>
+          <li id="equip">Medium format</li>
+          <li id="equip">View camera</li>
+        </ul>
+      </div>
+      <div class="nav_btn drop"><p>Light</p>
+        <ul class="drop-content">
+          <li id="equip" type="Strobe">Strobe</li>
+          <li id="equip">Strobe + standart reflector</li>
+          <li id="equip">Strobe + umbrella</li>
+          <li id="equip">Strobe + softbox</li>
+          <li id="equip">Strobe + beauty dish</li>
+          <li id="equip">Strobe + med reflector</li>
+          <li id="equip">Strobe + long reflectore</li>
+          <li id="equip">Strobe + XL reflector</li>
+        </ul>
+      </div>
+      <div class="nav_btn drop"><p>Grip</p>
+        <ul class="drop-content">
+          <li id="equip">Large boom</li>
+          <li id="equip">Frame</li>
+        </ul>
+      </div>
+      <div class="nav_btn drop"><p>V Flats / Reflectors</p>
+        <ul class="drop-content">
+          <li id="equip">V Flat - Black</li>
+          <li id="equip">V Flat - White</li>
+          <li id="equip">V Flat Open</li>
+          <li id="equip">Silver reflector</li>
+          <li id="equip">White reflector</li>
+        </ul>
+      </div>
+      <div class="nav_btn drop"><p>Misc</p>
+        <ul class="drop-content">
+          <li id="equip">Cube</li>
+          <li id="equip">Work light</li>
+        </ul>
+      </div>
+      <div class="nav_btn drop"><p>Environment</p>
+        <ul class="drop-content">
+          <li id="equip">Seamless paper</li>
+          <li id="equip">Wall</li>
+          <li id="equip">Window</li>
+        </ul>
+      </div>
+      <div id="text-btn" class="nav_btn">Text</div>
+      <button id="drawing-mode-btn" class="nav_btn">Drawing mode</button>
+      <button id="background-btn" class="nav_btn"></button>
+      <%= form_for :canvas, url: canvas_url(@canvas), method: :patch, html: { id: "save-btn" } do |f|%>
+        <%= f.hidden_field :state_json, id: 'canvas_json' %>
+        <%= f.hidden_field :canvas_svg, id: 'canvas_svg' %>
+        <%= f.button 'Save', id: 'save-submit', class: "nav_btn" %>
+      <% end %>
+      <button id="delete-btn" class="nav_btn">Delete</button>
 
 
     </div>
-    <div class="canvas-container col-11">
+    <div class="canvas-cont col-10">
       <canvas id="canvas" width="1000px" height="600px" data-canvas-json="<%= @canvas.state_json %>" ></canvas>
     </div>
-    <div class="bottom-navigation" id="bottom-navigation"></div>
   </div>
 </div>
 <%= javascript_pack_tag 'canvas' %>

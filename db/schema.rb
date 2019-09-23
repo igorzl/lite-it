@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2019_09_22_085256) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +20,6 @@ ActiveRecord::Schema.define(version: 2019_09_22_085256) do
   create_table "canvases", force: :cascade do |t|
     t.string "name"
     t.string "tools_json"
-    t.string "description"
     t.string "photo"
     t.bigint "project_id"
     t.datetime "created_at", null: false
@@ -31,12 +32,13 @@ ActiveRecord::Schema.define(version: 2019_09_22_085256) do
 
   create_table "projects", force: :cascade do |t|
     t.string "name"
-    t.string "description"
     t.string "image"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "position"
+    t.string "date"
+    t.string "location"
     t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
