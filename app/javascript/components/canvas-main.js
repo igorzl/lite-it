@@ -108,6 +108,7 @@ const addObject = link => {
 const allEquipment = document.querySelectorAll('#equip');
 allEquipment.forEach(eq => {
   eq.addEventListener('click', e => {
+    console.log(targetEquip['Subject Position']);
     addObject(targetEquip[e.target.innerHTML]);
   });
 });
