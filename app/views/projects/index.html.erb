@@ -1,43 +1,46 @@
 <div class="dashboard-container">
-
   <% if @projects.empty? %>
     <div class="waiting">
       <h4>Still waiting for your first project... </h4>
     </div>
 
   <% else %>
-    <% @projects.each_with_index do |project, index| %>
-      <%= link_to  project_path(project), class: "card-link" do  %>
-      <% if index.even? %>
-        <div class="project-card">
-          <div class="project-title project-title-rt">
+    <ul id="projects">
+      <% @projects.each_with_index do |project, index| %>
+        <li class="list-unstyled">
+          <%= link_to  project_path(project), class: "card-link" do  %>
+          <% if index.even? %>
+            <div class="project-card">
+              <div class="project-title project-title-rt">
 
-            <%= project.name %>
-          </div>
-            <div class="img">
+                <%= project.name %>
+              </div>
+                <div class="img">
 
-          <% if project.image %>
-              <%= cl_image_tag project.image %>
-          <% end %>
+              <% if project.image %>
+                  <%= cl_image_tag project.image %>
+              <% end %>
+                </div>
+
             </div>
+          <% else %>
+            <div class="project-card project-card-left">
+              <div class="project-title project-title-left">
+                <%= project.name %>
+              </div>
 
-        </div>
-      <% else %>
-        <div class="project-card project-card-left">
-          <div class="project-title project-title-left">
-            <%= project.name %>
-          </div>
+                <div class="img">
 
-            <div class="img">
+              <% if project.image %>
+                  <%= cl_image_tag project.image %>
+              <% end %>
+                </div>
 
-          <% if project.image %>
-              <%= cl_image_tag project.image %>
-          <% end %>
             </div>
-
-        </div>
-        <% end %>
+            <% end %>
+          <% end %>
+        </li>
       <% end %>
-    <% end %>
+    </ul>
   <% end %>
 </div>

@@ -2,7 +2,14 @@ class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit, :update, :destroy]
 
   def index
-    @projects = policy_scope(Project)
+    @projects = policy_scope(Project.order(:position))
+  end
+
+  def sort
+    params[:project].each_with_index do |id, index|
+      Project.where(id: id).update_all(position: index = 1)
+    end
+    head :ok
   end
 
   def show
