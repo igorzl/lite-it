@@ -1,8 +1,24 @@
 class ProjectsController < ApplicationController
   before_action :find_project, only: [:show, :edit, :update, :destroy]
+  # skip_before_action :verify_authenticity_token, only: [:sort]
 
   def index
-    @projects = policy_scope(Project)
+    @projects = policy_scope(Project.order(:position))
+  end
+
+  def sort
+    params[:order].each do |index, id|
+      @project = Project.find(id)
+      authorize @project
+      @project.position = index
+      @project.save
+    end
+    @projects = Project.order(:position)
+    respond_to do |format|
+      format.js {render json: @projects}
+      # format.html {redirect_to projects_path}
+    end
+    # render formats: :js, handlers: :erb
   end
 
   def show
@@ -47,6 +63,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, :image)
+    params.require(:project).permit(:name, :date, :location, :image)
   end
 end
