@@ -76,8 +76,6 @@
         <%= f.hidden_field :canvas_svg, id: 'canvas_svg' %>
         <%= f.button 'Save', id: 'save-submit', class: "nav_btn" %>
       <% end %>
-
-
     </div>
     <div class="canvas-cont col-10">
       <canvas id="canvas" width="1000px" height="600px" data-canvas-json="<%= @canvas.state_json %>" ></canvas>

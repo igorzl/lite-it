@@ -5,7 +5,7 @@ class CanvasesController < ApplicationController
   def new
     @canvas = Canvas.new
     authorize @canvas
-    @project = Project.find(@canvas.project_id)
+    @project = Project.find(params[:project_id])
   end
 
   def create
