@@ -1,6 +1,6 @@
 <div class="row canvas-show-all-b">
 
-  <div class="col-4">
+  <div class="col-2">
 
       <%#= link_to 'Edit canvas'.html_safe, edit_canvas_path(canvas), class: "btn_white_show", id: "btn_edit_canvas" %>
 
@@ -47,13 +47,13 @@
 
   </div>
 
-    <div class="row col-8 mt-2">
+    <div class="row col-10 mt-2 d-flex justify-content-around ">
       <% if !@canvas.photo.url.nil?  %>
-        <%= cl_image_tag @canvas.photo, class: "col-4 obj-fit-cvr" %>
+        <%= cl_image_tag @canvas.photo, class: "col-5 obj-fit-cvr canvas-photo" %>
       <% else %>
-        <%= image_tag 'kloss.jpg', class: "col-4 obj-fit-cvr" %>
+        <%= image_tag 'kloss.jpg', class: "col-5 obj-fit-cvr" %>
       <% end %>
-      <div class="col-8 background-grey-flex">
+      <div class="col-5 background-grey-flex">
         <div id="render-svg" data-canvas-svg="<%= @canvas.canvas_svg %>" ></div>
       </div>
     </div>
@@ -87,6 +87,3 @@ let button = document.getElementById("btn_add_notes");
 
 </script>
 <%= javascript_pack_tag 'toggle-show-canvas' %>
-
-
-
