@@ -5,6 +5,27 @@ const initSortable = () => {
   Sortable.create(list, {
     ghostClass: "ghost",
     animation: 150,
+    onMove: event => {
+      console.log(event)
+      const el = event.dragged.childNodes[1].children[0];
+
+      // 1. check if moving up / or down (originalEvent.clientRect) if mouse is higher than prev position / lower
+      // 2. if down (find NEXT sibling.. and change classes)
+      // 3. if up (find PREV sibling.. and change classes)
+      // projects.children[3].previousElementSibling (or check id of number)
+      // el.style.transition = 'all 1s ease';
+
+
+      if (el.classList.contains('project-card-left')) {
+
+        el.classList.remove('project-card-left')
+        el.classList.add('project-card-rt')
+      } else {
+        el.classList.add('project-card-left')
+        el.classList.remove('project-card-rt')
+      }
+      // event.dragged.classList.add('')
+    },
     onEnd: (event) => {
       let listItems = document.querySelectorAll(".list-unstyled")
       // console.log(listItems) // project id and position
@@ -35,7 +56,7 @@ const initSortable = () => {
         projects.forEach((project, index) => {
           const projectTemplate =
           `<li class="list-unstyled" id="${project.id}">
-              <a class="card-link" id="project_81" href="/projects/81">
+              <a class="card-link" href="/projects/${project.id}">
                 <div class="project-card ${index % 2 !== 0 && 'project-card-left'}">
                   <div class="project-title ${ index % 2 !== 0 ? 'project-title-left' :'project-title-rt' } " >
                     ${project.name}
@@ -48,7 +69,6 @@ const initSortable = () => {
             </li>`
           projectsHtml += projectTemplate;
         })
-        console.log(projectsHtml)
         projectsList.innerHTML = projectsHtml
 
       });

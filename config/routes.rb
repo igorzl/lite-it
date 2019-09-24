@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :canvases, only: [:edit, :show, :update, :delete] do
     member do
       patch :update_notes
+      patch :update_name
+      patch :update_photo
     end
   end
 end

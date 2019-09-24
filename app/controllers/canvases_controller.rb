@@ -1,6 +1,6 @@
 class CanvasesController < ApplicationController
 
-  before_action :find_canvas, only: [:show, :edit, :update, :update_notes, :destroy]
+  before_action :find_canvas, only: [:show, :edit, :update, :update_notes, :update_name, :update_photo, :destroy]
 
   def new
     @canvas = Canvas.new
@@ -27,7 +27,7 @@ class CanvasesController < ApplicationController
   end
 
   def update_notes
-    authorize @canvas
+    authorize @canvasedit
       @canvas.notes = params[:canvas][:notes]
       if @canvas.save
         respond_to do |format|
@@ -40,6 +40,24 @@ class CanvasesController < ApplicationController
           format.js
         end
       end
+  end
+
+  def update_name
+    authorize @canvas
+    @canvas.name = params[:canvas][:name]
+    if @canvas.save
+      redirect_to canvas_path(@canvas)
+    else
+      @canvas.name = ""
+      render :show
+    end
+  end
+
+  def update_photo
+    authorize @canvas
+    @canvas.photo = params[:canvas][:photo]
+    @canvas.save
+    redirect_to canvas_path(@canvas)
   end
 
   def show
@@ -57,7 +75,7 @@ class CanvasesController < ApplicationController
   end
 
   def canvas_params
-    params.require(:canvas).permit(:state_json, :canvas_svg, :project, :notes)
+    params.require(:canvas).permit(:state_json, :canvas_svg, :project, :notes, :photo)
   end
 
 end

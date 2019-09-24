@@ -32,6 +32,16 @@ class CanvasPolicy < ApplicationPolicy
     project.user == user
   end
 
+  def update_name?
+    project = Project.find(record.project_id)
+    project.user == user
+  end
+
+  def update_photo?
+    project = Project.find(record.project_id)
+    project.user == user
+  end
+
   def destroy?
     record.user == user
   end

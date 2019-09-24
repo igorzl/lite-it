@@ -1,4 +1,72 @@
-<%= render 'canvases/form', canvas: @canvas %>
+<div class="row canvas-show-all-b">
+
+  <div class="col-4">
+
+      <%#= link_to 'Edit canvas'.html_safe, edit_canvas_path(canvas), class: "btn_white_show", id: "btn_edit_canvas" %>
+
+
+      <% if @canvas.name.nil? %>
+        <p class="btn_white_show" id="add-canvas-title">Add title</p>
+      <% else %>
+        <p class="btn_white_show" id="add-canvas-title">Update title</p>
+      <% end %>
+      <div class="title-form d-none">
+        <%= simple_form_for(@canvas, url: update_name_canvas_url) do |f| %>
+        <%= f.error_notification %>
+        <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <%= f.input :name, label: false %>
+        <%= f.button :submit, 'Save', class: 'btn btn-primary'  %>
+        <% end %>
+      </div>
+
+
+      <%= link_to edit_canvas_path(@canvas), id: "btn_edit_canvas" do %>
+        <p class= "btn_white_show">Edit Canvas</p>
+      <% end %>
+      <% if @canvas.notes.nil? %>
+        <p class="btn_white_show" id="btn_add_notes">Add notes</p>
+      <% else %>
+        <p class="btn_white_show" id="btn_add_notes">Update notes</p>
+      <% end %>
+
+      <% if @canvas.photo.url.nil?  %>
+        <p class="btn_white_show" id="add-canvas-photo">Add image</p>
+      <% else %>
+        <p class="btn_white_show" id="add-canvas-photo">Update image</p>
+      <% end %>
+      <div class="photo-form d-none">
+        <%= simple_form_for(@canvas, url: update_photo_canvas_url) do |f| %>
+          <%= f.input :photo, label: 'Upload a photo' %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit, 'Save', class: 'btn btn-primary'  %>
+        <% end %>
+      </div>
+      <%= link_to project_path(@canvas.project) do %>
+        <p class= "btn_white_show">Back to project</p>
+      <% end %>
+
+  </div>
+
+    <div class="row col-8 mt-2">
+      <% if !@canvas.photo.url.nil?  %>
+        <%= cl_image_tag @canvas.photo, class: "col-4 obj-fit-cvr" %>
+      <% else %>
+        <%= image_tag 'kloss.jpg', class: "col-4 obj-fit-cvr" %>
+      <% end %>
+      <div class="col-8 background-grey-flex">
+        <div id="render-svg" data-canvas-svg="<%= @canvas.canvas_svg %>" ></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="canvas-name">
+  <h6><%= @canvas.name %></h6>
+</div>
+
+
 
 <div class="canvas-notes-container">
 
@@ -6,12 +74,7 @@
 </div>
 
 
+<%= javascript_pack_tag 'canvas-show' %>
+<%= javascript_pack_tag 'toggle-show-canvas' %>
 
-<script>
-  let button = document.getElementById("btn_add_notes");
-  button.addEventListener("click", () => {
 
-    let notesDiv = document.querySelector(".canvas-notes-container");
-    notesDiv.innerHTML = " <%= j render 'canvases/note_form', canvas: @canvas %>"
-})
-</script>
