@@ -2,10 +2,6 @@
   width: 340px;
   height: 187px;
 }
-svg {
-  width: 340px;
-  height: 187px;
-}
 
 .card-container a {
   width: 340px;
@@ -64,4 +60,29 @@ svg {
 
 .nav_btn i {
   font-size: 12px;
+}
+
+//CONTROLS ON THE CANVAS CARD
+
+#render-svg svg {
+  width: 340px;
+  height: 187px;
+  position: relative;
+}
+
+.controls {
+  position: absolute;
+  top: 150px;
+  left: 160px;
+}
+
+.controls ul {
+  list-style-type: none;
+}
+
+.controls li {
+  color: rgb(73, 73, 73);
+  display: inline;
+  font-size: 24px;
+  padding-left: 15px;
 }

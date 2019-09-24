@@ -35,7 +35,15 @@
                 <% end %>
               </div>
               <div class="face" id='downside'>
-                <div id="render-svg" data-canvas-svg="<%= canvas.canvas_svg %>" style="background: white;"></div>
+                <div id="render-svg" data-canvas-svg="<%= canvas.canvas_svg %>" style="background: white;">
+                    <div class="controls">
+                      <ul>
+                        <li><i class="fas fa-link"></i></li>
+                        <li><i class="fas fa-pen-square"></i></li>
+                        <li><i class="fas fa-trash-alt"></i></li>
+                      </ul>
+                    </div>
+                </div>
               </div>
             </div>
           <% end %>
