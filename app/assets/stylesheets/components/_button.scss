@@ -110,6 +110,18 @@
   height: fit-content;
 }
 
+.btn_white_show_normal {
+
+  @extend .btn-ghost;
+  font-weight: lighter;
+  margin: 10px 15px;
+  padding: 8px 20px;
+  max-width: 204px;
+  min-width: 204px;
+  text-align: center;
+  // height: fit-content;
+}
+
  .btn_white_show:hover {
   cursor: pointer;
  }

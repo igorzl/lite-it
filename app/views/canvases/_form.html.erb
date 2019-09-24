@@ -1,4 +1,4 @@
-<div class="canvas-show-all">
+<!-- <div class="canvas-show-all">
 
   <div class="canvas-show-btns-canvas">
 
@@ -12,15 +12,50 @@
       <% end %>
     </div>
 
-  <!--
-    Canvas part starts here
-  -->
-    <div class="canvas-show-canvas">
-      <img src="" alt="Here will be canvas">
+    <div class="canvas-show-img-canvas">
+      <%= image_tag 'kloss.jpg', class: "canvas-show-img" %>
+      <div class="canvas-show-canvas">
+        <div id="render-svg" data-canvas-svg="<%= @canvas.canvas_svg %>" style="background: white"></div>
+      </div>
     </div>
-  <!--
-    Canvas part ends here
-  -->
+
   </div>
 
 </div>
+
+<div class="canvas-name">
+  <h6>Canvas name</h6>
+</div>
+ -->
+
+<div class="row canvas-show-all-b">
+
+  <div class="col-4">
+
+      <%#= link_to 'Edit canvas'.html_safe, edit_canvas_path(canvas), class: "btn_white_show", id: "btn_edit_canvas" %>
+      <%= link_to edit_canvas_path(canvas), id: "btn_edit_canvas" do %>
+        <p class= "btn_white_show">Edit Canvas</p>
+      <% end %>
+      <% if canvas.notes.nil? %>
+        <p class="btn_white_show" id="btn_add_notes">Add notes</p>
+      <% else %>
+        <p class="btn_white_show" id="btn_add_notes">Update notes</p>
+      <% end %>
+  </div>
+
+    <div class="row col-8 mt-2">
+      <%= image_tag 'kloss.jpg', class: "col-4 obj-fit-cvr" %>
+      <div class="col-8 background-grey-flex">
+        <div id="render-svg" data-canvas-svg="<%= @canvas.canvas_svg %>" ></div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="canvas-name">
+  <h6>Canvas name</h6>
+</div>
+
+<%= javascript_pack_tag 'canvas-show' %>
