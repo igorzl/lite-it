@@ -6,15 +6,6 @@
   background-color: white;
 }
 
-.card-canvas {
-  margin-bottom: 18px;
-  margin-right: 20px;
-  overflow: hidden;
-  background: #C4C4C4;
-  // border: 2px solid black;
-  display: flex;
-}
-
 // .card-canvas:last-of-type {
 //   margin:0;
 // }
@@ -27,7 +18,7 @@
 }
 
 .prj-btns-canvas {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -39,14 +30,14 @@
 }
 
 .prj-btns {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
 
 .prj-descr {
-  display:flex;
+  display: flex;
   flex-direction: column;
   margin-top: 30px;
   margin-bottom: 78px;
