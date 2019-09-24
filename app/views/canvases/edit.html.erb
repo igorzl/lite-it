@@ -66,13 +66,14 @@
       </div>
       <div id="text-btn" class="nav_btn"><p>Text</p></div>
       <div id="drawing-mode-btn" class="nav_btn"><p>Drawing mode</p></div>
+      <button id="delete-btn" class="nav_btn"><p>Delete item</p></button>
+      <div class="nav_btn"><p><%= link_to  "To project", project_path(@project) %></p></div>
       <div class="nav_btn"><p></p></div>
       <%= form_for :canvas, url: canvas_url(@canvas), method: :patch, html: { id: "save-btn" } do |f|%>
         <%= f.hidden_field :state_json, id: 'canvas_json' %>
         <%= f.hidden_field :canvas_svg, id: 'canvas_svg' %>
         <%= f.button 'Save', id: 'save-submit', class: "nav_btn" %>
       <% end %>
-      <button id="delete-btn" class="nav_btn">Delete</button>
 
 
     </div>

@@ -78,13 +78,14 @@ addSaveBtn.addEventListener('submit', e => {
   }, 100);
 });
 
+// DRAWING MODE
 const drawingMode = () => {
   console.log('drawing mode toggle');
   canvas.isDrawingMode = !canvas.isDrawingMode;
   if (canvas.isDrawingMode) {
-    addDrawingBtn.innerHTML = 'Exit drawing mode';
+    addDrawingBtn.innerHTML = '<p>Stop drawing</p>';
   } else {
-    addDrawingBtn.innerHTML = 'Drawing mode';
+    addDrawingBtn.innerHTML = '<p>Drawing mode</p>';
   }
 };
 let addDrawingBtn = document.getElementById('drawing-mode-btn');
