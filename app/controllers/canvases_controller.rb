@@ -29,7 +29,7 @@ class CanvasesController < ApplicationController
   end
 
   def update_notes
-    authorize @canvasedit
+    authorize @canvas
       @canvas.notes = params[:canvas][:notes]
       if @canvas.save
         respond_to do |format|

@@ -74,7 +74,19 @@
 </div>
 
 
+
 <%= javascript_pack_tag 'canvas-show' %>
+<script>
+
+let button = document.getElementById("btn_add_notes");
+  button.addEventListener("click", () => {
+
+    let notesDiv = document.querySelector(".canvas-notes-container");
+    notesDiv.innerHTML = "<%= j render 'canvases/note_form', canvas: @canvas %>"
+  })
+
+</script>
 <%= javascript_pack_tag 'toggle-show-canvas' %>
+
 
 
