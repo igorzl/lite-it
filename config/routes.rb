@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'projects#index'
+  root to: 'pages#home'
   get "about", to: "pages#about"
+  get "home", to: "pages#home"
   resources :projects, only: [:index, :show, :create, :new, :edit, :update, :destroy] do
     collection do
       patch :sort
