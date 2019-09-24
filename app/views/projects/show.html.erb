@@ -31,8 +31,9 @@
             <%= link_to canvas_path(canvas), id: "link" do %>
             <div class="card-canvas">
               <div  class="face" id='upside'>
-                <% if canvas.photo.url %>
-                  <%= cl_image_tag canvas.photo, width: 330, height: 182, crop: :fill %>
+              <% #raise %>
+                <% if !canvas.photo.url.nil? %>
+                  <%= cl_image_tag canvas.photo, height: 182, crop: :fill %>
                 <% else %>
                   <%= image_tag 'https://www.anitian.com/wp-content/uploads/2016/11/silicon-valley-gilfoyle.jpg',   class: "thumb-index"%>
                 <% end %>
