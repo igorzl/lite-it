@@ -10,35 +10,47 @@
               <h4><%= @project.location %></h4>
             </div>
             <div class="edit-delete-project">
+            <span>
               <%= link_to "Edit", edit_project_path %>
-              <%= link_to "  /  Delete", project_path, method: 'delete', data: { confirm: "Do you want to delete this project ?"} %>
+               /
+              <%= link_to "Delete", project_path, method: 'delete', data: { confirm: "Do you want to delete this project ?"} %>
+              </span>
             </div>
           </div>
         </div>
         <div class="row canvases-container">
-           <div class="col-4" id="add-canvas">
+            <div class="col-4" id="add-canvas">
               <%= link_to new_project_canvas_path(@project) do %>
               <div class="card-canvas">
                 <%= image_tag "plus.png", alt: "Add new canvas", width: 335, height: 185 %>
               </div>
               <% end %>
-          </div>
+            </div>
           <% @project.canvases.each_with_index do |canvas, index| %>
           <div class="col-md-4 card-container">
-            <%= link_to canvas_path(canvas) do %>
+            <%= link_to canvas_path(canvas), id: "link" do %>
             <div class="card-canvas">
               <div  class="face" id='upside'>
-                <% if canvas.photo.url %>
-                  <%= cl_image_tag canvas.photo, width: 330, height: 182, crop: :fill %>
+              <% #raise %>
+                <% if !canvas.photo.url.nil? %>
+                  <%= cl_image_tag canvas.photo, height: 182, crop: :fill %>
                 <% else %>
                   <%= image_tag 'https://www.anitian.com/wp-content/uploads/2016/11/silicon-valley-gilfoyle.jpg',   class: "thumb-index"%>
                 <% end %>
               </div>
               <div class="face" id='downside'>
-                <div id="render-svg" data-canvas-svg="<%= canvas.canvas_svg %>" style="background: white;"></div>
+                <div id="render-svg" data-canvas-svg="<%= canvas.canvas_svg %>" style="background: white;">
+                </div>
               </div>
             </div>
           <% end %>
+            <div class="controls">
+              <i data-link="<%= 'lite-it.herokuapp.com' + canvas_path(canvas) %>" class="fas fa-link tooltip">
+              <span class="tooltiptext">Copy link to clipboar</span></i>
+              <%= link_to  '<i class="fas fa-pen-square"></i>'.html_safe, edit_canvas_url(canvas) %>
+              <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, canvas_path(canvas), method: 'delete', data: { confirm: "Do you want to delete this canvas?"} %>
+                                 
+            </div>
           </div>
         <% end %>
        </div>

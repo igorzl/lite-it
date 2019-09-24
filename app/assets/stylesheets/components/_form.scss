@@ -18,25 +18,38 @@
 .center {
   width: 19.5%;
   margin: auto;
+  height: 80vh;
 }
 
-.right {
+.sign_up {
   align-items: flex-end;
   width: 20%;
   float: right;
+  height: 80vh;
 }
 
 .login {
   align-items: flex-end;
   margin-left: 60%;
   margin-right: 20%;
+  height: 80vh;
 }
 
-.end {
+.about {
   display: flex;
-  font-weight: lighter;
   align-items: flex-end;
   padding-bottom: 96px;
+  width: 19.5%;
+  margin: auto;
+  height: 80vh;
+  text-align: justify;
 }
+
+.about p {
+  font-weight: lighter;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 
 

@@ -14,3 +14,12 @@ let loadSvg = () => {
   });
 };
 if (document.querySelector('#render-svg')) loadSvg();
+
+//cardContainers = document.querySelectorAll('#link');
+insertLinks = document.querySelectorAll('.fa-link');
+insertLinks.forEach((el, index) => {
+  //el.dataset.link = cardContainers[index];
+  el.addEventListener('click', e => {
+    navigator.clipboard.writeText(e.target.dataset.link);
+  });
+});

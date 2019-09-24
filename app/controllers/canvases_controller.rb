@@ -13,7 +13,7 @@ class CanvasesController < ApplicationController
     authorize @canvas
     @canvas.project = Project.find(params[:project_id])
     @canvas.save
-    redirect_to(edit_canvas_path(@canvas) ,:notice => 'Canvas saved.')
+    redirect_to(edit_canvas_path(@canvas), :notice => 'Canvas saved.')
   end
 
   def edit
@@ -67,7 +67,10 @@ class CanvasesController < ApplicationController
   end
 
   def destroy
+    authorize @canvas
+    @project = Project.find(@canvas.project_id)
     Canvas.destroy(params[:id])
+    render "projects/show"
   end
 
   private
