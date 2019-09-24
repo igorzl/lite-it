@@ -100,8 +100,9 @@ const drawingMode = () => {
 let addDrawingBtn = document.getElementById('drawing-mode-btn');
 addDrawingBtn.addEventListener('click', drawingMode);
 
-// OBJECTS FOR CANVAS
-// Takes link from object imported from canvas-objects.js
+// ADD OBJECTS TO CANVAS
+// Takes link from the canvas-objects.js according to the name written inside the button.
+// If you change name - change the key for the link
 const addObject = link => {
   fabric.loadSVGFromURL(link, function(objects, options) {
     var loadedObjects = fabric.util.groupSVGElements(objects, options);

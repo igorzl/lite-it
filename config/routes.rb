@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :canvases, only: [:new, :create]
   end
 
-  resources :canvases, only: [:edit, :show, :update, :delete] do
+  resources :canvases, only: [:edit, :show, :update, :destroy] do
     member do
       patch :update_notes
     end
