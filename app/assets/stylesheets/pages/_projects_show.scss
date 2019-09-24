@@ -1,0 +1,58 @@
+.thumb-index {
+  width: 340px;
+  height: 187px;
+}
+svg {
+  width: 340px;
+  height: 187px;
+}
+
+.card-container a {
+  width: 340px;
+  height: 190px;
+  margin-top: 15px;
+}
+
+.card-container {
+  position: relative;
+  width: 340px;
+  height: 190px;
+  perspective: 600;
+  display: flex;
+}
+.card-canvas {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition: all 0.7s linear;
+  transform-style: preserve-3d;
+}
+
+.card-container:hover .card-canvas {
+  transform: rotateY(180deg);
+}
+
+.card-canvas .face#upside {
+  position: absolute;
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.card-canvas .face#downside {
+  transform: rotateY(180deg);
+  height: 100%;
+  backface-visibility: hidden;
+  border: 1px solid black;
+}
+
+.canvases-container {
+  margin-top: 10px;
+}
+
+#add-canvas {
+  position: relative;
+  width: 335px;
+  height: 187px;
+  margin-top: 15px;
+}

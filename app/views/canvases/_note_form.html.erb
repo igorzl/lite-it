@@ -1,4 +1,4 @@
-<%= simple_form_for(canvas, remote: true, method: :patch) do |form| %>
+<%= simple_form_for(canvas, url: update_notes_canvas_url(canvas), remote: true, method: :patch) do |form| %>
 
   <%= form.input :notes, as: :text, label: false, input_html: { value: canvas.notes, style: 'min-height: 120px;'} %>
  <div class="text-right mb-3">
