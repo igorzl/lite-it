@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'projects#index'
+  root to: 'pages#home'
   get "about", to: "pages#about"
+  get "home", to: "pages#home"
   resources :projects, only: [:index, :show, :create, :new, :edit, :update, :destroy] do
     collection do
       patch :sort
@@ -12,6 +13,8 @@ Rails.application.routes.draw do
   resources :canvases, only: [:edit, :show, :update, :destroy] do
     member do
       patch :update_notes
+      patch :update_name
+      patch :update_photo
     end
   end
 end
