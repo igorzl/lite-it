@@ -45,7 +45,7 @@
 
 .canvas-show-canvas {
   // display: flex;
-  background-color: #6C757C;
+  background-color: #6c757c;
   // border: 2px solid red;
   // flex-grow: 1;
   // margin-left: 65px;
@@ -78,21 +78,18 @@
   max-height: 25vh;
 }
 
-.was-validated .form-control:valid, .form-control.is-valid {
+.was-validated .form-control:valid,
+.form-control.is-valid {
   background-image: none !important;
   border-radius: 0px !important;
   border: 1px solid black !important;
 }
 
-svg {
-  width: 620px;
-  height: 380px;
-}
-
-#render-svg {
-  svg{
+.svg-class {
+  svg {
+    width: 100%;
     height: 100%;
     background: lightgrey;
+    object-fit: cover;
   }
 }
-
