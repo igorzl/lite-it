@@ -56,7 +56,7 @@ const initSortable = () => {
         projects.forEach((project, index) => {
           const projectTemplate =
           `<li class="list-unstyled" id="${project.id}">
-              <a class="card-link" id="project_81" href="/projects/81">
+              <a class="card-link" href="/projects/${project.id}">
                 <div class="project-card ${index % 2 !== 0 && 'project-card-left'}">
                   <div class="project-title ${ index % 2 !== 0 ? 'project-title-left' :'project-title-rt' } " >
                     ${project.name}
