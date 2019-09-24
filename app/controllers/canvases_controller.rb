@@ -5,6 +5,7 @@ class CanvasesController < ApplicationController
   def new
     @canvas = Canvas.new
     authorize @canvas
+    @project = Project.find(params[:project_id])
   end
 
   def create
@@ -17,6 +18,7 @@ class CanvasesController < ApplicationController
 
   def edit
     authorize @canvas
+    @project = Project.find(@canvas.project_id)
   end
 
   def update
