@@ -1,4 +1,12 @@
 @-webkit-keyframes pulse {
+
+  // 0% { box-shadow:0 0 5px white, inset 0 0 1000px black; }
+  // 50% { box-shadow:0 0 20px white, inset 0 0 500px white; }
+  // 100% { box-shadow:0 0 1000px white, inset 0 0 1000px white; }
+  0% { box-shadow:0 0 5px white, inset 10px 0 1000px black; }
+  50% { box-shadow:0 0 20px white, inset 120px 0 500px white; }
+  100% { box-shadow:0 0 1000px white, inset 200px 300px 1000px white; }
+
   0% {
     box-shadow: 0 0 5px white, inset 0 0 1000px black;
   }
@@ -8,6 +16,7 @@
   100% {
     box-shadow: 0 0 1000px white, inset 0 0 1000px white;
   }
+
 }
 @-webkit-keyframes logo-main {
   0% {
@@ -31,12 +40,7 @@
   padding-top: 40px;
   margin-right: 20px;
 }
-// body {
-//   background: black;
-//   height: 100vh;
-//   weight: 100vw;
-//   font-family: Roboto;
-// }
+
 .home-only {
   display: flex;
   justify-content: space-evenly;
@@ -49,6 +53,20 @@
   overflow: hidden;
 }
 .home-only .main-intro {
+
+    display: block;
+    color: white;
+    font-size:40px;
+    padding-top: 40px;
+    background: linear-gradient(90deg, #000, #fff, #000);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 4s linear;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255,255, 255, 0.04);
+    animation-fill-mode: forwards;
+    font-weight: 100;
+
   display: block;
   color: white;
   font-size: 40px;
@@ -61,6 +79,7 @@
   -webkit-text-fill-color: rgba(255, 255, 255, 0.03);
   animation-fill-mode: forwards;
   font-weight: 100;
+
 }
 @keyframes animate {
   0% {
@@ -70,16 +89,31 @@
     background-position: 500%;
   }
 }
+
+100% {
+  background-position: 500%
+}
+}
+.inner {
+    text-transform: uppercase;
+
 .inner {
   text-transform: uppercase;
+
 }
 .inner {
   background-color: black;
   width: 50px;
   height: 50px;
   margin-top: 25px;
+
+  border-radius:50%;
+  // -webkit-animation: pulse 0.2s linear 4s;
+  -webkit-animation: pulse 1.6s linear 4s;
+
   border-radius: 50%;
   -webkit-animation: pulse 0.1s linear 4s;
+
   animation-fill-mode: forwards;
 }
 .main-intro {
