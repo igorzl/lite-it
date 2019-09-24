@@ -151,8 +151,8 @@ project = Project.find_by(name: "041118_Brazilian Vogue")
 # description = "My outdoor shoot for spring. General lighting set up. Would still love to do some more before the end of the year. Shooting Hasselblad with a digital back. Retouching @ Dtouch, 15 west 12th street (contact Sandra). Meeting Michele and Gabriele regarding this on November 15th. Still need to set up time and place. Show 15 - 20 selects to review"
 
 canvas = Canvas.create!(project: project, name: "Green Fields", remote_photo_url: 'https://66.media.tumblr.com/e287c849069799c3f35230aeecfe868c/tumblr_pxfq3nA9yH1wqm65mo1_1280.jpg')
-canvas = Canvas.create!(project: project, name: "Green Fields", remote_photo_url: 'https://www.thefashionisto.com/wp-content/uploads/2019/08/Alton-Mason-2019-Vogue-Brasil-008.jpg')
-canvas = Canvas.create!(project: project, name: "Green Fields", remote_photo_url: 'https://66.media.tumblr.com/a7de80dd0f4261cfb179f814622928ac/tumblr_pvooa14vRl1wqm65mo1_1280.jpg')
+canvas = Canvas.create!(project: project, name: "Red Fields", remote_photo_url: 'https://www.thefashionisto.com/wp-content/uploads/2019/08/Alton-Mason-2019-Vogue-Brasil-008.jpg')
+canvas = Canvas.create!(project: project, name: "Yellow Fields", remote_photo_url: 'https://66.media.tumblr.com/a7de80dd0f4261cfb179f814622928ac/tumblr_pvooa14vRl1wqm65mo1_1280.jpg')
 
 puts "done creating projects"
 
