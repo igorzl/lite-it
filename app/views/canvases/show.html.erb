@@ -12,8 +12,10 @@
       <% end %>
       <div class="title-form d-none">
         <%= simple_form_for(@canvas, url: update_name_canvas_url) do |f| %>
+        <%= f.error_notification %>
+        <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <%= f.input :name, label: false %>
-        <%= f.submit %>
+        <%= f.button :submit, 'Save', class: 'btn btn-primary'  %>
         <% end %>
       </div>
 
@@ -36,15 +38,18 @@
         <%= simple_form_for(@canvas, url: update_photo_canvas_url) do |f| %>
           <%= f.input :photo, label: 'Upload a photo' %>
           <%= f.input :photo_cache, as: :hidden %>
-          <%= f.submit %>
+          <%= f.button :submit, 'Save', class: 'btn btn-primary'  %>
         <% end %>
       </div>
+      <%= link_to project_path(@canvas.project) do %>
+        <p class= "btn_white_show">Back to project</p>
+      <% end %>
 
   </div>
 
     <div class="row col-8 mt-2">
       <% if !@canvas.photo.url.nil?  %>
-        <%= cl_image_tag @canvas.photo, height: 250, crop: :fill %>
+        <%= cl_image_tag @canvas.photo, class: "col-4 obj-fit-cvr" %>
       <% else %>
         <%= image_tag 'kloss.jpg', class: "col-4 obj-fit-cvr" %>
       <% end %>
@@ -70,24 +75,6 @@
 
 
 <%= javascript_pack_tag 'canvas-show' %>
+<%= javascript_pack_tag 'toggle-show-canvas' %>
 
-<script>
-  let button = document.getElementById("btn_add_notes");
-  button.addEventListener("click", () => {
 
-    let notesDiv = document.querySelector(".canvas-notes-container");
-    notesDiv.innerHTML = " <%= j render 'canvases/note_form', canvas: @canvas %>"
-})
-
- let addTitle = document.getElementById("add-canvas-title");
-    addTitle.addEventListener("click", () => {
-      let form = document.querySelector(".title-form");
-      form.classList.toggle("d-none")
-})
-
- let addPhoto = document.getElementById("add-canvas-photo");
-    addPhoto.addEventListener("click", () => {
-      let form = document.querySelector(".photo-form");
-      form.classList.toggle("d-none")
-})
-</script>

@@ -27,7 +27,7 @@ class CanvasesController < ApplicationController
   end
 
   def update_notes
-    authorize @canvas
+    authorize @canvasedit
       @canvas.notes = params[:canvas][:notes]
       if @canvas.save
         respond_to do |format|
@@ -45,8 +45,12 @@ class CanvasesController < ApplicationController
   def update_name
     authorize @canvas
     @canvas.name = params[:canvas][:name]
-    @canvas.save
-    redirect_to canvas_path(@canvas)
+    if @canvas.save
+      redirect_to canvas_path(@canvas)
+    else
+      @canvas.name = ""
+      render :show
+    end
   end
 
   def update_photo
