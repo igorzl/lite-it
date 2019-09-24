@@ -7,6 +7,10 @@ class ApplicationController < ActionController::Base
     projects_path
   end
 
+  def after_sign_up_path_for(resource)
+    projects_path
+  end
+
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: [:fname, :lname])
