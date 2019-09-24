@@ -10,3 +10,8 @@
     </ul>
   <% end %>
 </div>
+
+
+<%= content_for(:after_js) do  %>
+<%= javascript_pack_tag("sorting") %>
+<% end %>
