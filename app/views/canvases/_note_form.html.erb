@@ -1,6 +1,6 @@
 <%= simple_form_for(canvas, url: update_notes_canvas_url(canvas), remote: true, method: :patch) do |form| %>
 
-  <%= form.input :notes, as: :text, label: false, input_html: { value: canvas.notes, style: 'min-height: 120px;'} %>
+  <%= form.input :notes, as: :text, label: false, input_html: { value: canvas.notes, style: 'min-height: 75px;'} %>
  <div class="text-right mb-3">
   <%= form.button :submit, 'Save', class: "btn_white_show_normal" %>
 </div>
