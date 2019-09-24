@@ -44,7 +44,11 @@
   </div>
 
     <div class="row col-8 mt-2">
-      <%= image_tag 'kloss.jpg', class: "col-4 obj-fit-cvr" %>
+      <% if !canvas.photo.url.nil?  %>
+        <%= cl_image_tag canvas.photo, height: 250, crop: :fill %>
+      <% else %>
+        <%= image_tag 'kloss.jpg', class: "col-4 obj-fit-cvr" %>
+      <% end %>
       <div class="col-8 background-grey-flex">
         <div id="render-svg" data-canvas-svg="<%= @canvas.canvas_svg %>" ></div>
       </div>
