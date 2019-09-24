@@ -47,7 +47,6 @@
 }
 
 .background-grey-flex {
-  display: flex;
   background: lightgrey;
 }
 
@@ -59,3 +58,8 @@
     max-width: 204px;
     margin-left: 15px;
 }
+.canvas-photo {
+  max-width: 620px;
+  max-height: 620px;
+}
+
