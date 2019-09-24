@@ -67,7 +67,10 @@ class CanvasesController < ApplicationController
   end
 
   def destroy
+    authorize @canvas
+    @project = Project.find(@canvas.project_id)
     Canvas.destroy(params[:id])
+    render "projects/show"
   end
 
   private

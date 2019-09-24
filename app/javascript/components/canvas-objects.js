@@ -7,19 +7,19 @@ const targetEquip = {
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161829/medium_format_p7yky5.svg',
   'View camera':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161829/view_camera_c1z2zk.svg',
-  'Strobe + standart reflector':
+  'Standart reflector':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161924/strobe_head_and_reflector_k9xfbb.svg',
-  'Strobe + umbrella':
+  Umbrella:
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161926/strobe_head_and_umbrella_rmvia5.svg',
-  'Strobe + softbox':
+  Softbox:
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161924/strobe_head_and_softbox_cnrybk.svg',
-  'Strobe + beauty dish':
+  'Beauty dish':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569225650/Strobe_and_beauty_dish_xldfr9.svg',
-  'Strobe + med reflector':
+  'Med reflector':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161924/strobe_head_and_medium_reflector_bx2odr.svg',
-  'Strobe + long reflectore':
+  'Long reflectore':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161924/strobe_head_and_long_reflector_aietj1.svg',
-  'Strobe + XL reflector':
+  'XL reflector':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569165178/strobe_head_and_huge_reflector_dpp4qg.svg',
   Strobe:
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161926/strobe_head_g4qlsi.svg',
@@ -27,9 +27,9 @@ const targetEquip = {
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161971/mega_boom_zifikv.svg',
   Frame:
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161971/frame_s4vslz.svg',
-  'V Flat - Black':
+  'Black V Flat':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161903/v_flat_b_fbw4gc.svg',
-  'V Flat - White':
+  'White V Flat':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161903/v_flat_white_b_zgqspx.svg',
   'V Flat Open':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161905/v_flat_open_b_aingub.svg',

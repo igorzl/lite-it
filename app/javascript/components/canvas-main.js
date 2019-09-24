@@ -36,7 +36,7 @@ loadCanvas();
 // Adding text
 
 function addTextbox() {
-  var text = new fabric.Textbox('Your note', {
+  var text = new fabric.Textbox('Enter text', {
     left: 50,
     top: 50,
     width: 150,
@@ -60,6 +60,15 @@ function removeSelected() {
 
 let addDeleteBtn = document.getElementById('delete-btn');
 addDeleteBtn.addEventListener('click', removeSelected);
+
+document.addEventListener('keydown', e => {
+  if (
+    e.key === 'Backspace' &&
+    canvas.getActiveObjects()[0].text === undefined
+  ) {
+    removeSelected();
+  }
+});
 
 // SAVING
 let addSaveBtn = document.getElementById('save-btn');
@@ -91,14 +100,15 @@ const drawingMode = () => {
 let addDrawingBtn = document.getElementById('drawing-mode-btn');
 addDrawingBtn.addEventListener('click', drawingMode);
 
-// OBJECTS FOR CANVAS
-// Takes link from object imported from canvas-objects.js
+// ADD OBJECTS TO CANVAS
+// Takes link from the canvas-objects.js according to the name written inside the button.
+// If you change name - change the key for the link
 const addObject = link => {
   fabric.loadSVGFromURL(link, function(objects, options) {
     var loadedObjects = fabric.util.groupSVGElements(objects, options);
     loadedObjects.set({
-      left: fabric.util.getRandomInt(25, 950),
-      top: fabric.util.getRandomInt(25, 550),
+      left: fabric.util.getRandomInt(50, 300),
+      top: fabric.util.getRandomInt(100, 500),
       scaleX: 0.5,
       scaleY: 0.5
     });
