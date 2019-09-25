@@ -6,7 +6,9 @@
     <%= f.input :name, label: "Project Name" %>
     <%= f.input :date, label: "Date", placeholder: "mmddyy" %>
     <%= f.input :location, label: "Location" %>
-    <%= image_tag "", width: 180, class: "hide", id: "photo-preview" %>
+    <div id="image-container">
+      <%= image_tag "", class: "hide", id: "photo-preview" %>
+    </div>
     <%= f.input :image, input_html: { class: 'hide', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: 'Upload a photo' %>
 
   </div>
