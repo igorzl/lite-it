@@ -2,7 +2,11 @@
 
     <% if user_signed_in? %>
     <%= link_to "LITE-IT", root_path, class: "btn-navbar__logged-in logo" %>
+    <% if current_user.fname.empty? %>
+    <%= link_to "Welcome", "#", class: "btn-navbar__logged-in" %>
+    <% else %>
     <%= link_to "Welcome, #{current_user.fname}", "#", class: "btn-navbar__logged-in" %>
+    <% end %>
     <% if !@project.nil? && !@project.id.nil? %>
     <%= link_to "Edit", edit_project_path(@project), class: "btn-navbar__logged-in" %>
     <% else %>

@@ -15,6 +15,7 @@ class ProjectPolicy < ApplicationPolicy
 
   def sort?
     true
+    record.user == user
   end
 
   def edit?
