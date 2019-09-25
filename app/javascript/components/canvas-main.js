@@ -37,10 +37,12 @@ loadCanvas();
 
 function addTextbox() {
   var text = new fabric.Textbox('Enter text', {
-    left: 50,
-    top: 50,
+    left: fabric.util.getRandomInt(15, 300),
+    top: fabric.util.getRandomInt(15, 300),
     width: 150,
-    fontSize: 20
+    fontSize: 14,
+    fontFamily: 'Roboto',
+    fontWeight: 200
   });
   canvas.add(text);
 }
