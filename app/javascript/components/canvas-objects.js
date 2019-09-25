@@ -19,7 +19,7 @@ const targetEquip = {
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161924/strobe_head_and_medium_reflector_bx2odr.svg',
   'Long reflectore':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161924/strobe_head_and_long_reflector_aietj1.svg',
-  'XL reflector':
+  'XL umbrella':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569165178/strobe_head_and_huge_reflector_dpp4qg.svg',
   Strobe:
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161926/strobe_head_g4qlsi.svg',

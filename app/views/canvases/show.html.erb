@@ -1,9 +1,7 @@
-<div class="row canvas-show-all-b">
+<div class='container-for-canvases-show'>
+  <div class="row canvas-show-all-b justify-content-center">
 
-  <div class="col-2">
-
-      <%#= link_to 'Edit canvas'.html_safe, edit_canvas_path(canvas), class: "btn_white_show", id: "btn_edit_canvas" %>
-
+    <div class="col-3 btn-menu">
 
       <% if @canvas.name.nil? %>
         <p class="btn_white_show" id="add-canvas-title">Add title</p>
@@ -13,12 +11,10 @@
       <div class="title-form d-none">
         <%= simple_form_for(@canvas, url: update_name_canvas_url) do |f| %>
         <%= f.error_notification %>
-        <%#= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <%= f.input :name, label: false %>
         <%= f.button :submit, 'Save', class: 'btn canvas-save-btn'  %>
         <% end %>
       </div>
-
 
       <%= link_to edit_canvas_path(@canvas), id: "btn_edit_canvas" do %>
         <p class= "btn_white_show">Edit Canvas</p>
@@ -48,43 +44,38 @@
 
   </div>
 
-    <div class="row col-10 mt-2 d-flex justify-content-around ">
+    <div class="row col-9 d-flex justify-content-around ">
       <% if !@canvas.photo.url.nil?  %>
-        <%= cl_image_tag @canvas.photo, class: "col-5 obj-fit-cvr canvas-photo" %>
+        <%= cl_image_tag @canvas.photo, class: "obj-fit-cvr canvas-photo" %>
       <% else %>
-        <%= image_tag 'kloss.jpg', class: "col-5 obj-fit-cvr" %>
+        <%= image_tag 'kloss.jpg', class: "obj-fit-cvr" %>
       <% end %>
-      <div class="col-5 background-grey-flex">
+      <div class="background-grey-flex">
         <div id="render-svg" data-canvas-svg="<%= @canvas.canvas_svg %>" ></div>
       </div>
     </div>
 
   </div>
 
+  <div class="canvas-name">
+    <h6><%= @canvas.name %></h6>
+  </div>
+
+
+
+  <div class="canvas-notes-container">
+     <%= render 'canvases/note', canvas: @canvas %>
+  </div>
 </div>
 
-<div class="canvas-name">
-  <h6><%= @canvas.name %></h6>
-</div>
 
-
-
-<div class="canvas-notes-container">
-
-   <%= render 'canvases/note', canvas: @canvas %>
-</div>
-
-
-
-<%= javascript_pack_tag 'canvas-show' %>
 <script>
-
 let button = document.getElementById("btn_add_notes");
   button.addEventListener("click", () => {
 
     let notesDiv = document.querySelector(".canvas-notes-container");
     notesDiv.innerHTML = "<%= j render 'canvases/note_form', canvas: @canvas %>"
   })
-
 </script>
 <%= javascript_pack_tag 'toggle-show-canvas' %>
+<%= javascript_pack_tag 'canvas-show' %>

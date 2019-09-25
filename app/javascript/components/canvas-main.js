@@ -11,10 +11,8 @@ let loadCanvas = () => {
   if (canvasData.canvasJson != null) {
     canvas.loadFromJSON(canvasData.canvasJson, function() {
       canvas.renderAll();
-      console.log('Load from db');
     });
   } else {
-    console.log('Load new');
     fabric.loadSVGFromURL(
       'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161984/subject_position_pveqoj.svg',
       function(objects, options) {
@@ -37,10 +35,12 @@ loadCanvas();
 
 function addTextbox() {
   var text = new fabric.Textbox('Enter text', {
-    left: 50,
-    top: 50,
+    left: fabric.util.getRandomInt(15, 300),
+    top: fabric.util.getRandomInt(15, 300),
     width: 150,
-    fontSize: 20
+    fontSize: 14,
+    fontFamily: 'Roboto',
+    fontWeight: 200
   });
   canvas.add(text);
 }
@@ -81,7 +81,6 @@ addSaveBtn.addEventListener('submit', e => {
   canvas_json.value = JSON.stringify(canvas.toJSON());
   canvas_svg.value = canvas.toSVG();
   addSaveBtn.submit();
-  console.log(canvas_svg.value);
   setTimeout(() => {
     document.getElementById('save-submit').disabled = false;
   }, 100);
@@ -89,7 +88,6 @@ addSaveBtn.addEventListener('submit', e => {
 
 // DRAWING MODE
 const drawingMode = () => {
-  console.log('drawing mode toggle');
   canvas.isDrawingMode = !canvas.isDrawingMode;
   if (canvas.isDrawingMode) {
     addDrawingBtn.innerHTML = '<p>Stop drawing</p>';
@@ -120,7 +118,6 @@ const addObject = link => {
 const allEquipment = document.querySelectorAll('#equip');
 allEquipment.forEach(eq => {
   eq.addEventListener('click', e => {
-    console.log(targetEquip['Subject Position']);
     addObject(targetEquip[e.target.innerHTML]);
   });
 });

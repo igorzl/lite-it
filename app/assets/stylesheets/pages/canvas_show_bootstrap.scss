@@ -1,24 +1,19 @@
 .canvas-show-all-b {
   background-color: white;
   color: black;
-  margin: 0 50px;
-  margin-top: 10px;
+  margin: 0px 50px;
   min-height: 70vh;
-  // justify-content: space-between;
 }
 
 .canvas-show-btns-canvas-b {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  //flex-grow: 1;
 }
 
 .canvas-show-btns-b {
   display: flex;
-  //border: 2px solid green;
   flex-direction: column;
-  // justify-content: space-between;
 }
 
 .canvas-show-btns-b p {
@@ -27,8 +22,6 @@
 
 .canvas-show-img-canvas-b {
   display: flex;
-  //background-color: #EDEDED;
-  //justify-content: space-around;
   margin-left: 20px;
 }
 
@@ -37,29 +30,14 @@
 }
 
 .canvas-show-canvas-b {
-  // display: flex;
   background-color: #6c757c;
-  // border: 2px solid red;
-  // flex-grow: 1;
-  // margin-left: 65px;
-  // justify-content: space-between;
-  //border: 2px solid blue;
-}
-
-.background-grey-flex {
-  background: lightgrey;
 }
 
 .title-form {
-    max-width: 204px;
-    margin-left: 15px;
+  max-width: 204px;
+  margin-left: 15px;
 }
 .photo-form {
-    max-width: 204px;
-    margin-left: 15px;
+  max-width: 204px;
+  margin-left: 15px;
 }
-.canvas-photo {
-  max-width: 620px;
-  max-height: 620px;
-}
-
