@@ -1,4 +1,3 @@
-<!-- <div class="d-flex flex-column align-items-start ml-4 mb-auto mt-5">  -->
 <div class="black">
 <div class="d-flex">
   <div class="prj-btns-canvas-descr">
@@ -21,8 +20,9 @@
         <div class="row canvases-container">
             <div class="col-4" class="card-canvas">
               <%= link_to new_project_canvas_path(@project) do %>
-              <div id="add-canvas" class="card-canvas">
+              <div id="add-canvas" class="card-canvas tooltip-new-canvas">
                 <%= image_tag "https://res.cloudinary.com/dkjjz54zd/image/upload/v1569397112/_version_b_zf3y7q.png", alt: "Add new canvas", width: 335, height: 185 %>
+                <span class="tooltiptext">Create new canvas</span>
               </div>
               <% end %>
             </div>
@@ -48,7 +48,7 @@
           <% end #end of link %>
             <div class="controls">
               <i data-link="<%= 'lite-it.herokuapp.com' + canvas_path(canvas) %>" class="fas fa-link tooltip">
-              <span class="tooltiptext">Copy link to clipboar</span></i>
+              <span class="tooltiptext">Copy link to clipboard</span></i>
               <%= link_to  '<i class="fas fa-pen-square"></i>'.html_safe, edit_canvas_url(canvas) %>
               <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, canvas_path(canvas), method: 'delete', data: { confirm: "Do you want to delete this canvas?"} %>                                
             </div>
