@@ -2,7 +2,8 @@
 
     <% if user_signed_in? %>
     <%= link_to "LITE-IT", root_path, class: "btn-navbar__logged-in logo" %>
-    <%= link_to "Welcome, #{current_user.fname}", "#", class: "btn-navbar__logged-in" %>
+    <%#= link_to "Welcome, #{current_user.fname}", "#", class: "btn-navbar__logged-in" %>
+    <p  style="font-weight: 400; width: 20%; text-align: center; padding: 23px 24px; margin: 0">Welcome, <%=  current_user.fname %></p>
     <% if !@project.nil? && !@project.id.nil? %>
     <%= link_to "Edit", edit_project_path(@project), class: "btn-navbar__logged-in" %>
     <% else %>
@@ -12,7 +13,8 @@
     <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn-navbar__logged-in" %>
     <% else %>
         <%= link_to "LITE-IT", "#", class: "btn__navbar logo" %>
-        <%= link_to "Hide me", "#", class: "btn__navbar", style: "color:white" %>
+        <%#= link_to "Hide me", "#", class: "btn__navbar", style: "color:white" %>
+        <p class="btn-navbar" style="color:white; width: 20%;"></p>
         <% if params[:action] == "about" %>
           <%= link_to "About", root_path, class: "btn__navbar" %>
         <% else %>
