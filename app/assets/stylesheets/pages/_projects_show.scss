@@ -3,24 +3,25 @@
   height: 187px;
 }
 
-.card-container a {
-  width: 340px;
-  height: 190px;
-  margin-top: 15px;
+.canvases-container {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between + safe;
+  align-content: align-content;
 }
 
 .card-container {
-  margin-top: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   position: relative;
   width: 340px;
   height: 190px;
   perspective: 600;
-  display: flex;
 }
+
 .card-canvas {
   position: relative;
-  height: 100%;
-  width: 100%;
   transition: all 0.7s linear;
   transform-style: preserve-3d;
 }
@@ -31,16 +32,18 @@
   height: 100%;
   width: 100%;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
+
 .card-canvas .face#downside {
   transform: rotateY(180deg);
   height: 100%;
   backface-visibility: hidden;
-  border: 1px solid black;
 }
-
-.canvases-container {
-  margin-top: 10px;
+#render-svg {
+  border: 0.5px solid black;
 }
 
 #add-canvas {
@@ -69,8 +72,8 @@
 
 .controls {
   position: absolute;
-  top: 175px;
-  left: 244px;
+  top: 189px;
+  left: 252px;
   list-style-type: none;
   background-color: #303030;
   opacity: 0;
