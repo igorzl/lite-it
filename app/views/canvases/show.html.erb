@@ -36,8 +36,8 @@
       <% end %>
       <div class="photo-form d-none">
         <%= simple_form_for(@canvas, url: update_photo_canvas_url) do |f| %>
-          <%= f.input :photo, label: 'Upload a photo' %>
-          <%= f.input :photo_cache, as: :hidden %>
+          <%= image_tag "", class: "hide", id: "photo-preview" %>
+          <%= f.input :photo, input_html: { class: 'hide', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: 'Upload a photo' %>
           <%= f.button :submit, 'Save', class: 'btn btn-primary'  %>
         <% end %>
       </div>
