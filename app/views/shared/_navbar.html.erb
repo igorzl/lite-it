@@ -2,8 +2,17 @@
 
     <% if user_signed_in? %>
     <%= link_to "LITE-IT", root_path, class: "btn-navbar__logged-in logo" %>
-    <%#= link_to "Welcome, #{current_user.fname}", "#", class: "btn-navbar__logged-in" %>
+
+    <% if current_user.fname.empty? %>
+
+    <p class="panel-navbar__logged-in" >Welcome</p>
+    <% else %>
     <p class="panel-navbar__logged-in">Welcome, <%=  current_user.fname %></p>
+    <% end %>
+
+    <%#= link_to "Welcome, #{current_user.fname}", "#", class: "btn-navbar__logged-in" %>
+
+
     <% if !@project.nil? && !@project.id.nil? %>
     <%= link_to "Edit", edit_project_path(@project), class: "btn-navbar__logged-in" %>
     <% else %>

@@ -7,6 +7,7 @@ const initSortable = () => {
     animation: 150,
     onMove: event => {
       console.log(event)
+      console.log(list.size)
       const el = event.dragged.childNodes[1].children[0];
 
       // 1. check if moving up / or down (originalEvent.clientRect) if mouse is higher than prev position / lower
@@ -34,6 +35,7 @@ const initSortable = () => {
         return order[index] = item.id
       })
       console.log(order)
+      console.log(listItems.count)
       fetch("projects/sort", {
         method: "PATCH",
         dataType: 'script',
