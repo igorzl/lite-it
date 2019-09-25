@@ -4,10 +4,12 @@
     <%= link_to "LITE-IT", root_path, class: "btn-navbar__logged-in logo" %>
 
     <% if current_user.fname.empty? %>
-    <%= link_to "Welcome", "#", class: "panel-navbar__logged-in" %>
+
+    <p class="panel-navbar__logged-in" >Welcome</p>
     <% else %>
-    <%= link_to "Welcome, #{current_user.fname}", "#", class: "panel-navbar__logged-in" %>
+    <p class="panel-navbar__logged-in">Welcome, <%=  current_user.fname %></p>
     <% end %>
+
     <%#= link_to "Welcome, #{current_user.fname}", "#", class: "btn-navbar__logged-in" %>
 
 
