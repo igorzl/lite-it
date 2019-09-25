@@ -91,3 +91,17 @@
     object-fit: cover;
   }
 }
+
+.photo-preview-size {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.canvas-save-btn {
+  margin: 0 auto;
+  display: block;
+}
+
+.canvas-upload-photo {
+  font-weight: bolder;
+}
