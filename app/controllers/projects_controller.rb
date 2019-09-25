@@ -13,7 +13,7 @@ class ProjectsController < ApplicationController
       @project.position = index
       @project.save
     end
-    @projects = Project.order(:position)
+    @projects = Project.where(user: current_user).order(:position)
     respond_to do |format|
       format.js {render json: @projects}
       # format.html {redirect_to projects_path}
