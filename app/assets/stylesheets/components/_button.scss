@@ -154,3 +154,26 @@
   font-size: 22px;
   padding: 18.5px;
 }
+
+.panel-ghost {
+  color: black;
+  border: 0.4px solid #4A4A4A;
+  padding: 23px 24px;
+  border-radius: 0px;
+}
+
+.panel__navbar {
+  @extend .panel-ghost;
+  width: 20%;
+  text-align: center;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.panel-navbar__logged-in {
+  @extend .panel-ghost;
+  width: 20%;
+  font-weight: lighter;
+  text-align: center;
+  margin: 0;
+}
