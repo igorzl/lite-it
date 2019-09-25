@@ -1,0 +1,26 @@
+.tooltip-new-canvas {
+  position: relative;
+  display: inline-block;
+  //border-bottom: 1px dotted black;
+}
+
+.tooltip-new-canvas .tooltiptext {
+  visibility: hidden;
+  width: 180px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 2px;
+  padding: 5px 0;
+
+  bottom: 100%;
+  left: 50%;
+  margin-left: -20px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip-new-canvas:hover .tooltiptext {
+  visibility: visible;
+}
