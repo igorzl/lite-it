@@ -1,25 +1,25 @@
+.container-for-canvases-show {
+  margin: 50px 0px;
+  height: 83vh;
+}
+
 .canvas-show-all {
   display: flex;
   background-color: white;
   color: black;
-  margin: 0 50px;
   padding: 24px 30px;
   min-height: 90vh;
-  // justify-content: space-between;
 }
 
 .canvas-show-btns-canvas {
   display: flex;
   justify-content: space-around;
   width: 100%;
-  //flex-grow: 1;
 }
 
 .canvas-show-btns {
   display: flex;
-  //border: 2px solid green;
   flex-direction: column;
-  // justify-content: space-between;
 }
 
 .canvas-show-btns p {
@@ -28,29 +28,18 @@
 
 .canvas-show-img-canvas {
   display: flex;
-  //background-color: #EDEDED;
-  //justify-content: space-around;
   margin-left: 20px;
 }
 
 .canvas-show-img {
-  // min-width: 150px;
-  // padding-right: 20px;
   width: 45%;
   min-height: 380px;
   flex-shrink: 0;
   background-size: cover;
-  //border: 2px solid #49692F;
 }
 
 .canvas-show-canvas {
-  // display: flex;
   background-color: #6c757c;
-  // border: 2px solid red;
-  // flex-grow: 1;
-  // margin-left: 65px;
-  // justify-content: space-between;
-  //border: 2px solid blue;
 }
 
 .canvas-show-bottom {
@@ -83,11 +72,25 @@
   border: 1px solid black !important;
 }
 
-.svg-class {
-  svg {
-    width: 100%;
-    height: 100%;
-    background: lightgrey;
-    object-fit: cover;
-  }
+.background-grey-flex svg {
+  max-width: 40vw;
+  max-height: 40vh;
+}
+
+.background-grey-flex {
+  background: lightgrey;
+  max-width: 40vw;
+  max-height: 40vh;
+  padding: 0px;
+  align-self: center;
+}
+
+.canvas-photo {
+  max-width: 40vw;
+  max-height: 40vh;
+  align-self: center;
+}
+
+.btn-menu {
+  align-self: center;
 }
