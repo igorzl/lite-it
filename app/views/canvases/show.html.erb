@@ -38,6 +38,7 @@
         <%= simple_form_for(@canvas, url: update_photo_canvas_url) do |f| %>
           <%= image_tag "", class: "hide", id: "photo-preview" %>
           <%= f.input :photo, input_html: { class: 'hide', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: 'Upload a photo' %>
+          <%= f.button :submit, 'Save', class: 'btn btn-primary'  %>
         <% end %>
       </div>
       <%= link_to project_path(@canvas.project) do %>
