@@ -49,8 +49,13 @@
 #add-canvas {
   position: relative;
   width: 335px;
-  height: 187px;
-  margin-top: 25px;
+  height: 188px;
+  margin-top: 20px;
+}
+
+#add-canvas img {
+    width: 335px;
+  height: 190px;
 }
 
 .nav_btn a {
@@ -66,7 +71,7 @@
 
 #render-svg svg {
   width: 340px;
-  height: 187px;
+  height: 189px;
   position: relative;
 }
 
@@ -122,7 +127,7 @@
   opacity: 0.3;
   color: #fff;
   text-align: center;
-  border-radius: 6px;
+  border-radius: 0px;
   padding: 5px 0;
   position: absolute;
   z-index: 1;
@@ -144,15 +149,19 @@
 .tooltip-new-canvas .tooltiptext {
   visibility: hidden;
   width: 180px;
-  background-color: black;
+  background-color: white;
   opacity: 0.5;
-  color: #fff;
+  color: black;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  font-size: 12px;
   text-align: center;
-  border-radius: 2px;
-  padding: 3px 0;
+  border-radius: 0px;
+  padding: 2px 0;
   bottom: 100%;
   left: 50%;
-  margin-left: -11px;
+  margin-left: -12.5px;
   position: absolute;
   z-index: 1;
 }
