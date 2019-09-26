@@ -34,7 +34,7 @@ const targetEquip = {
   'V Flat Open':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161905/v_flat_open_b_aingub.svg',
   'Silver reflector':
-    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161903/silver_reflector_qvvhxc.svg',
+    'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569413861/Silver_reflector_altd43.svg',
   'White reflector':
     'https://res.cloudinary.com/dkjjz54zd/image/upload/v1569161903/white_reflector_uqa9mx.svg',
   Cube:
