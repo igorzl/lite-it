@@ -48,7 +48,7 @@
       <% if !@canvas.photo.url.nil?  %>
         <%= cl_image_tag @canvas.photo, class: "obj-fit-cvr canvas-photo" %>
       <% else %>
-        <%= image_tag 'kloss.jpg', class: "obj-fit-cvr" %>
+        <%= image_tag 'kloss.jpg', class: "obj-fit-cvr canvas-photo" %>
       <% end %>
       <div class="background-grey-flex">
         <div id="render-svg" data-canvas-svg="<%= @canvas.canvas_svg %>" ></div>
